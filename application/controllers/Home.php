@@ -1,5 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+//ini_set('max_execution_time', 0); 
+//ini_set('memory_limit','2048M');
 
 class Home extends CI_Controller
 {
@@ -42,8 +44,6 @@ class Home extends CI_Controller
 
     public function doRegisterConsumer()
     {
-        $this->load->model('Login_model');
-
         if ($this->form_validation->run('registration_consumer') == FALSE) {
             $data = array(
                 'title' => 'Register',
@@ -51,7 +51,7 @@ class Home extends CI_Controller
             );
             $this->load->view('front/register', $data);
         } else {
-
+            $this->load->model('Login_model');
             $this->Login_model->doRegisterConsumer_model();
 
             $msg = '<div class="alert alert-success fade in block-inner">
@@ -73,7 +73,7 @@ class Home extends CI_Controller
             );
             $this->load->view('front/register', $data);
         } else {
-
+            $this->load->model('Login_model');
             $this->Login_model->doRegisterExpedition_model();
 
             $msg = '<div class="alert alert-success fade in block-inner">
