@@ -66,7 +66,9 @@ class Home extends CI_Controller
 
     public function doRegisterExpedition()
     {
-        if ($this->form_validation->run('registration_expedition') == FALSE) {
+        $this->load->model('Login_model');
+	    
+	if ($this->form_validation->run('registration_expedition') == FALSE) {
             $data = array(
                 'title' => 'Register',
                 'active' => array('', '', '', 'active'),
