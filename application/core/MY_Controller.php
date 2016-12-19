@@ -21,4 +21,8 @@ class MY_Controller extends CI_Controller
         $this->load->view($file, $data);
         $this->load->view('template/bottom');
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> origin/master
