@@ -1,10 +1,18 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Tagihan extends CI_Controller
+class Tagihan extends MY_Controller
 {
+
+    public function __construct(){
+        parent::__construct();
+    }
+
     public function index()
     {
-        $this->load->view('panel/tagihan');
+        $data = array(
+            'title' => 'Tagihan'
+        );
+        parent::template('panel/tagihan', $data);
     }
 }

@@ -1,10 +1,18 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Lokasi extends CI_Controller
+class Lokasi extends MY_Controller
 {
+    public function __construct(){
+        parent::__construct();
+    }
+
     public function index()
     {
-        $this->load->view('panel/lokasi');
+        $data = array(
+            'title' => 'Lokasi'
+        );
+
+        parent::template('panel/lokasi', $data);
     }
 }

@@ -1,44 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-    <?php $this->load->view('panel/common/top'); ?>
-
-    <style>
-        a.logo > img{
-            margin: 0 0 0 10px;
-        }
-    </style>
-
-</head>
-
-<body>
-
-<div id="wrapper">
-
-<!-- Navigation -->
-<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand logo" href="<?=site_url()?>">yukirim</a>
-    </div>
-    <!-- Top Menu Items -->
-    <?php $this->load->view('panel/common/top-menu');?>
-
-    <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
-    <div class="collapse navbar-collapse navbar-ex1-collapse">
-        <?php $this->load->view('panel/common/menu');?>
-    </div>
-    <!-- /.navbar-collapse -->
-</nav>
-
 <div id="page-wrapper">
 
     <div class="container-fluid">
@@ -165,11 +124,3 @@
 </div>
 <!-- /#page-wrapper -->
 
-</div>
-<!-- /#wrapper -->
-
-<?php $this->load->view('panel/common/bottom'); ?>
-
-</body>
-
-</html>

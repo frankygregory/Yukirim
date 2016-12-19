@@ -1,13 +1,19 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Supir extends CI_Controller
+class Supir extends MY_Controller
 {
+
+    public function __construct(){
+        parent::__construct();
+    }
+
     public function index()
     {
         $data = array(
             'title' => 'Driver'
         );
-        $this->load->view('panel/supir', $data);
+
+        parent::template('panel/supir', $data);
     }
 }

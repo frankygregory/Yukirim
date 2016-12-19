@@ -1,13 +1,18 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Rekanan extends CI_Controller
+class Rekanan extends MY_Controller
 {
+    public function __construct(){
+        parent::__construct();
+    }
+
     public function index()
     {
         $data = array(
             'title' => 'Rekanan'
         );
-        $this->load->view('panel/rekanan', $data);
+
+        parent::template('panel/rekanan', $data);
     }
 }

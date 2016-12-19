@@ -1,13 +1,19 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Kiriman extends CI_Controller
+class Kiriman extends MY_Controller
 {
+
+    public function __construct(){
+        parent::__construct();
+    }
+
     public function index()
     {
         $data = array(
-            'title' => 'KLiriman'
+            'title' => 'Kiriman'
         );
-        $this->load->view('panel/Kiriman', $data);
+
+        parent::template('panel/kiriman', $data);
     }
 }

@@ -1,13 +1,21 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class User extends CI_Controller
+class User extends MY_Controller
 {
+
+    public function __construct(){
+        parent::__construct();
+    }
+
     public function index()
     {
+        $this->load->model('User_model');
         $data = array(
-            'title' => 'User'
+            'title' => 'User',
+            'userdata' => $this->User_model->select_user()
         );
-        $this->load->view('panel/user', $data);
+
+        parent::template('panel/user', $data);
     }
 }

@@ -1,41 +1,51 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Cari_kiriman extends CI_Controller {
+class Cari_kiriman extends MY_Controller
+{
+
+    public function __construct()
+    {
+        parent::__construct();
+    }
 
     public function index()
     {
         $data = array(
             'title' => 'All'
         );
-        $this->load->view('panel/cari_kiriman', $data);
+        parent::template('panel/cari_kiriman', $data);
     }
 
-    public function privat(){
+    public function privat()
+    {
         $data = array(
             'title' => 'Private'
         );
-        $this->load->view('panel/cari_kiriman_private', $data);
+        parent::template('panel/cari_kiriman_private', $data);
     }
 
-    public function publik(){
+    public function publik()
+    {
         $data = array(
             'title' => 'Public'
         );
-        $this->load->view('panel/cari_kiriman_publik', $data);
+        parent::template('panel/cari_kiriman_public', $data);
     }
 
-    public function penawaran(){
+    public function penawaran()
+    {
         $data = array(
             'title' => 'Penawaran'
         );
-        $this->load->view('panel/cari_kiriman_penawaran', $data);
+        parent::template('panel/cari_kiriman_penawaran', $data);
     }
 
-    public function detail(){
+    public function detail()
+    {
         $data = array(
             'title' => 'Detail Kiriman'
         );
-        $this->load->view('panel/detail_kiriman', $data);
+        parent::template('panel/detail_kiriman', $data);
     }
 }

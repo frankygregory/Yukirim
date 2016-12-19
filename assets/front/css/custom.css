@@ -115,6 +115,8 @@
     border-color: #1CA347;
 }
 
+/* error validattion */
+
 .error_prefix {
     color: red;
     font-style: italic;

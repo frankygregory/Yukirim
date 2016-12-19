@@ -1,38 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-    <?php $this->load->view('panel/common/top'); ?>
-
-</head>
-
-<body>
-
-<div id="wrapper">
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="<?= site_url() ?>">yukirim</a>
-        </div>
-
-        <!-- Top Menu Items -->
-        <?php $this->load->view('panel/common/top-menu'); ?>
-
-        <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
-        <div class="collapse navbar-collapse navbar-ex1-collapse">
-            <?php $this->load->view('panel/common/menu'); ?>
-        </div>
-        <!-- /.navbar-collapse -->
-    </nav>
 
     <div id="page-wrapper">
 
@@ -76,97 +41,27 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>user01</td>
-                                <td>User 1</td>
-                                <td>testing.coba@gmail.com</td>
-                                <td>
-                                    <select>
-                                        <option></option>
-                                        <option selected>Group 1</option>
-                                        <option>Group 2</option>
-                                        <option>Group 3</option>
-                                    </select>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>2</td>
-                                <td>user02</td>
-                                <td>User 2</td>
-                                <td>testing.coba@gmail.com</td>
-                                <td>
-                                    <select>
-                                        <option></option>
-                                        <option>Group 1</option>
-                                        <option selected>Group 2</option>
-                                        <option>Group 3</option>
-                                    </select>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>3</td>
-                                <td>user03</td>
-                                <td>User 3</td>
-                                <td>testing.coba@gmail.com</td>
-                                <td>
-                                    <select>
-                                        <option></option>
-                                        <option>Group 1</option>
-                                        <option selected>Group 2</option>
-                                        <option>Group 3</option>
-                                    </select>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>4</td>
-                                <td>user04</td>
-                                <td>User 4</td>
-                                <td>testing.coba@gmail.com</td>
-                                <td>
-                                    <select>
-                                        <option></option>
-                                        <option>Group 1</option>
-                                        <option>Group 2</option>
-                                        <option selected>Group 3</option>
-                                    </select>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>5</td>
-                                <td>user05</td>
-                                <td>User 5</td>
-                                <td>testing.coba@gmail.com</td>
-                                <td>
-                                    <select>
-                                        <option></option>
-                                        <option>Group 1</option>
-                                        <option>Group 2</option>
-                                        <option selected>Group 3</option>
-                                    </select>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>6</td>
-                                <td>user06</td>
-                                <td>User 6</td>
-                                <td>testing.coba@gmail.com</td>
-                                <td>
-                                    <select>
-                                        <option></option>
-                                        <option>Group 1</option>
-                                        <option>Group 2</option>
-                                        <option selected>Group 3</option>
-                                    </select>
-                                </td>
-                            </tr>
-
-
+                            <?php
+                            $no = 1;
+                            foreach($userdata as $data){ ?>
+                                <tr>
+                                    <td><?=$no?></td>
+                                    <td><?=$data['username']?></td>
+                                    <td><?=$data['user_fullname']?></td>
+                                    <td><?=$data['user_email']?></td>
+                                    <td>
+                                        <select>
+                                            <option></option>
+                                            <option selected>Group 1</option>
+                                            <option>Group 2</option>
+                                            <option>Group 3</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                            <?php
+                            $no++;
+                            }
+                            ?>
                             </tbody>
                         </table>
                     </div>
@@ -213,10 +108,3 @@
 
     </div>
     <!-- /#page-wrapper -->
-
-</div>
-<!-- /#wrapper -->
-<?php $this->load->view('panel/common/bottom'); ?>
-</body>
-
-</html>

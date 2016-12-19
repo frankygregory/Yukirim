@@ -1,6 +1,19 @@
 <?php
 
 $config = array(
+    'login' => array(
+        array(
+            'field' => 'username',
+            'label' => 'Username',
+            'rules' => 'trim|required|min_length[8]|max_length[15]'
+        ),
+        array(
+            'field' => 'password',
+            'label' => 'Password',
+            'rules' => 'required'
+        )
+    ),
+
     'registration_consumer' => array(
         array(
             'field' => 'type_id',
@@ -48,6 +61,7 @@ $config = array(
             'rules' => 'required',
         ),
     ),
+
     'registration_expedition' => array(
         array(
             'field' => 'username_expedition',

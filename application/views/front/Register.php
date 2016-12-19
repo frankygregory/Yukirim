@@ -2,7 +2,7 @@
 <head>
     <title>yukirim - <?=$title?></title>
     <link rel="stylesheet" type="text/css" href="<?=base_url()?>assets/front/assets/css/bootstrap.min.css"/>
-    <link rel="stylesheet" type="text/css" href="<?=base_url()?>assets/front/css/register.css"/>
+    <link rel="stylesheet" type="text/css" href="<?=base_url()?>assets/front/css/custom.css"/>
 </head>
 <body id="form-register">
 <div class="container">
