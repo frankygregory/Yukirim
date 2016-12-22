@@ -43,7 +43,7 @@ $config = array(
         array(
             'field' => 'email',
             'label' => 'Email',
-            'rules' => 'trim|required|valid_email||is_unique[m_user.user_email]',
+            'rules' => 'trim|required|valid_email|is_unique[m_user.user_email]',
         ),
         array(
             'field' => 'password',

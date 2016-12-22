@@ -85,7 +85,7 @@
                                     <div class="row">
                                         <div class="col-lg-12">
                                             <div class="text-center">
-                                                <a href="#" tabindex="11" class="forgot-password">Login</a>
+                                                <a href="<?=base_url().'login/'?>" tabindex="11" class="forgot-password">Login</a>
                                                 <a href="<?=site_url()?>" tabindex="11" class="forgot-password">Home</a>
                                             </div>
                                         </div>

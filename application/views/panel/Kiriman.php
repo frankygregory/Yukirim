@@ -1,5 +1,3 @@
-
-
     <div id="page-wrapper">
 
         <div class="container-fluid">
@@ -8,11 +6,11 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header">
-                        Kiriman
+                        <?=$this->typography->auto_typography($title); ?>
                     </h1>
                     <ol class="breadcrumb">
                         <li class="active">
-                            <i class="fa fa-dashboard"></i> Kiriman
+                            <i class="fa fa-dashboard"></i> <?=$title;?>
                         </li>
                     </ol>
                 </div>
