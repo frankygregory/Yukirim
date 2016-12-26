@@ -267,7 +267,7 @@ Baik untuk mengisi kekosongan dalam truk maupun menambah potensi muatan yang dim
                 <div class="service-content">
                     <h4>Cepat & Mudah</h4>
 
-                    <p>Cukup isi lokasi dan barang yang mau dikirim dan anda akan terhubung dengan begitu banyak penyedia jasa kiriman.</p>
+                    <p>Cukup isi lokasi dan barang yang mau dikirim dan Anda akan terhubung dengan begitu banyak penyedia jasa kiriman</p>
                 </div>
             </div>
             <!-- End Service Icon 1 -->
@@ -280,7 +280,7 @@ Baik untuk mengisi kekosongan dalam truk maupun menambah potensi muatan yang dim
                 <div class="service-content">
                     <h4>Harga dan Layanan Terbaik</h4>
 
-                    <p>Anda dapat memberikan layanan dan harga terbaik karena adanya sistem penawaran.</p>
+                    <p>Sistem penawaran sehingga Anda dapat memilih layanan dan harga terbaik</p>
                 </div>
             </div>
             <!-- End Service Icon 2 -->
@@ -293,7 +293,7 @@ Baik untuk mengisi kekosongan dalam truk maupun menambah potensi muatan yang dim
                 <div class="service-content">
                     <h4>Transparan</h4>
 
-                    <p>Semua yang dilakukan dibuat transparan dan jelas baik dalam melakukan penawaran maupun barang yang dikirim.</p>
+                    <p>Bandingkan review dan rating berbagai penyedia jasa kiriman</p>
                 </div>
             </div>
             <!-- End Service Icon 3 -->
@@ -306,23 +306,10 @@ Baik untuk mengisi kekosongan dalam truk maupun menambah potensi muatan yang dim
                 <div class="service-content">
                     <h4>Otomasi dan Integrasi</h4>
 
-                    <p>Semua proses pengiriman terintegrasi langsung antara penyedia jasa kiriman maupun yang mempunyai kiriman.</p>
+                    <p>Anda bisa langsung lihat dan lacak kiriman karena Anda terhubung langsung dengan penyedia jasa kiriman</p>
                 </div>
             </div>
             <!-- End Service Icon 4 -->
-            
-            <!-- Start Service Icon 5 -->
-            <div class="col-md-3 col-sm-6 service-box service-center">
-                <div class="service-icon">
-                    <i class="fa fa-life-saver icon-large-effect icon-effect-1"></i>
-                </div>
-                <div class="service-content">
-                    <h4>Rating</h4>
-
-                    <p>Tersedia sistem feedback dan rating untuk setiap Kiriman yang sudah selesai dilakukan.</p>
-                </div>
-            </div>
-            <!-- End Service Icon 5 -->
 
         </div>
         <!-- End Services Icons -->
