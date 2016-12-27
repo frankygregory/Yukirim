@@ -237,14 +237,12 @@
     <div class="container">
         <!-- Start Big Heading -->
         <div class="big-title-child text-center" data-animation="fadeInDown" data-animation-delay="01">
-            <h1>Apa itu yukirim</h1>
+            <h1>Apa itu Yukirim?</h1>
         </div>
         <!--<div class="line"></div>-->
         <!-- End Big Heading -->
-        <p class="text-center-child">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-            doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
-            <br/>veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia
-            voluptas sit aspernatur aut odit aut fugit.</p>
+        <p class="text-center-child">Yukirim.com merupakan sebuah situs layanan yang menghubungkan antara penyedia jasa kiriman dengan orang yang mempunyai kiriman. Kami membuat pengiriman dalam jumlah atau bentuk besar menjadi mudah dengan menghubungkan langsung dengan penyedia jasa kiriman.
+Baik untuk mengisi kekosongan dalam truk maupun menambah potensi muatan yang dimiliki bagi penyedia jasa kiriman. Semua pengiriman dibuat transparan dan jelas dimana semuanya memberikan keuntungan bagi penyedia jasa kiriman dan yang mempunyai kiriman.</p>
     </div>
 </div>
 
@@ -255,7 +253,7 @@
     <div class="container">
 
         <div class="big-title-child text-center" data-animation="fadeInDown" data-animation-delay="01">
-            <h1><strong>Kenapa yukirim</strong></h1>
+            <h1><strong>Kenapa Yukirim?</strong></h1>
         </div>
 
         <!-- Start Services Icons -->
@@ -269,8 +267,7 @@
                 <div class="service-content">
                     <h4>Cepat & Mudah</h4>
 
-                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                        pariatur. Lorem ipsum dolor.</p>
+                    <p>Cukup isi lokasi dan barang yang mau dikirim dan Anda akan terhubung dengan begitu banyak penyedia jasa kiriman</p>
                 </div>
             </div>
             <!-- End Service Icon 1 -->
@@ -281,10 +278,9 @@
                     <i class="fa fa-star-half-empty icon-large-effect icon-effect-1"></i>
                 </div>
                 <div class="service-content">
-                    <h4>Harga Terbaik</h4>
+                    <h4>Harga dan Layanan Terbaik</h4>
 
-                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                        pariatur. Lorem ipsum dolor.</p>
+                    <p>Sistem penawaran sehingga Anda dapat memilih layanan dan harga terbaik</p>
                 </div>
             </div>
             <!-- End Service Icon 2 -->
@@ -295,10 +291,9 @@
                     <i class="fa fa-area-chart icon-large-effect icon-effect-1"></i>
                 </div>
                 <div class="service-content">
-                    <h4>Meningkatkan Profit</h4>
+                    <h4>Transparan</h4>
 
-                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                        pariatur. Lorem ipsum dolor.</p>
+                    <p>Bandingkan review dan rating berbagai penyedia jasa kiriman</p>
                 </div>
             </div>
             <!-- End Service Icon 3 -->
@@ -309,10 +304,9 @@
                     <i class="fa fa-life-saver icon-large-effect icon-effect-1"></i>
                 </div>
                 <div class="service-content">
-                    <h4>Transaksi Aman</h4>
+                    <h4>Otomasi dan Integrasi</h4>
 
-                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                        pariatur. Lorem ipsum dolor.</p>
+                    <p>Anda bisa langsung lihat dan lacak kiriman karena Anda terhubung langsung dengan penyedia jasa kiriman</p>
                 </div>
             </div>
             <!-- End Service Icon 4 -->
@@ -329,7 +323,7 @@
 <div class="section-child">
     <div class="container">
         <div class="big-title-child text-center" data-animation="fadeInDown" data-animation-delay="01">
-            <h1><strong>Mudah digunakan</strong></h1>
+            <h1><strong>Bagaimana caranya?</strong></h1>
         </div>
     </div>
 </div>
@@ -342,8 +336,8 @@
         </div> <!-- cd-timeline-img -->
 
         <div class="cd-timeline-content">
-            <h2>KUNJUNGI WEBSITE</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde? Iste voluptatibus minus veritatis qui ut.</p>
+            <h2>1. Isi detail Barang dan lokasi asal serta tujuan pengiriman</h2>
+            <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde? Iste voluptatibus minus veritatis qui ut.</p>-->
             <!--<a href="#0" class="cd-read-more">Read more</a>-->
             <!--<span class="cd-date">Jan 14</span>-->
         </div> <!-- cd-timeline-content -->
@@ -355,8 +349,8 @@
         </div> <!-- cd-timeline-img -->
 
         <div class="cd-timeline-content">
-            <h2>LOGIN/REGISTER</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde?</p>
+            <h2>2. Piih penyedia jasa kiriman yang sesuai baik dari sisi harga ataupun pelayanan</h2>
+            <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde?</p>-->
             <!--<a href="#0" class="cd-read-more">Read more</a>-->
             <!--<span class="cd-date">Jan 18</span>-->
         </div> <!-- cd-timeline-content -->
@@ -368,8 +362,8 @@
         </div> <!-- cd-timeline-img -->
 
         <div class="cd-timeline-content">
-            <h2>ISI INFORMASI PENGIRIMAN</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, obcaecati, quisquam id molestias eaque asperiores voluptatibus cupiditate error assumenda delectus odit similique.</p>
+            <h2>3. Lacak dan Lihat status kiriman Anda</h2>
+            <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, obcaecati, quisquam id molestias eaque asperiores voluptatibus cupiditate error assumenda delectus odit similique.</p>-->
             <!--<a href="#0" class="cd-read-more">Read more</a>-->
             <!--<span class="cd-date">Jan 24</span>-->
         </div> <!-- cd-timeline-content -->
@@ -381,8 +375,8 @@
         </div> <!-- cd-timeline-img -->
 
         <div class="cd-timeline-content">
-            <h2>TEMUKAN KENDARAAN</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde? Iste voluptatibus minus veritatis qui ut.</p>
+            <h2>4. Konfirmasi Kiriman yang sudah selesai</h2>
+            <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde? Iste voluptatibus minus veritatis qui ut.</p>-->
             <!--<a href="#0" class="cd-read-more">Read more</a>-->
             <!--<span class="cd-date">Feb 14</span>-->
         </div> <!-- cd-timeline-content -->
@@ -394,8 +388,8 @@
         </div> <!-- cd-timeline-img -->
 
         <div class="cd-timeline-content">
-            <h2>KONFIRMASI PEMESANAN</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum  earum voluptatem doloremque dolorem ipsam quae rerum quis. Odit, itaque, deserunt corporis vero ipsum nisi eius odio natus ullam provident pariatur temporibus quia eos repellat consequuntur perferendis enim amet.</p>
+            <h2>5. Berikan feedback dan rating bagi penyedia jasa kiriman</h2>
+            <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum  earum voluptatem doloremque dolorem ipsam quae rerum quis. Odit, itaque, deserunt corporis vero ipsum nisi eius odio natus ullam provident pariatur temporibus quia eos repellat consequuntur perferendis enim amet.</p>-->
             <!--<a href="#0" class="cd-read-more">Read more</a>-->
             <!--<span class="cd-date">Feb 18</span>-->
         </div> <!-- cd-timeline-content -->
@@ -407,8 +401,8 @@
         </div> <!-- cd-timeline-img -->
 
         <div class="cd-timeline-content">
-            <h2>Final Section</h2>
-            <p>This is the content of the last section</p>
+            <h2>6. Proses Kiriman sudah selesai</h2>
+            <!--<p>This is the content of the last section</p>-->
             <!--<span class="cd-date">Feb 26</span>-->
         </div> <!-- cd-timeline-content -->
     </div> <!-- cd-timeline-block -->
@@ -479,8 +473,8 @@
                 <!-- Call Action Button -->
                 <div class="button-side" style="margin-top:8px;"><a href="<?=site_url('login')?>" class="btn-system btn-large"><i class="icon-gift-1"></i> Login</a> <a href="<?=site_url('register')?>" class="btn-system btn-large btn-gray"><i class="icon-basket-2"></i> Get Started</a></div>
                 <!-- Call Action Text -->
-                <h2 class="primary"><strong>yukirim</strong>, Nikmati semua kemudahan di setiap pengiriman!</h2>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                <h2 class="primary"><strong>Yukirim</strong>, kirim apapun dan kapanpun dengan mudah, cepat dan aman</h2>
+                <!--<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>-->
             </div>
             <!-- End Call Action -->
         </div>
