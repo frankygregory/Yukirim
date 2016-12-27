@@ -61,6 +61,7 @@ $route['logout'] = 'login/logout';
 $route['panel/(:any)'] = 'panel/$1';
 $route['expedition/(:any)'] = 'expedition/$1';
 $route['consumer/(:any)'] = 'consumer/$1';
+$route['kendaraan/(:any)'] = 'panel/kendaraan/$1/$2';
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

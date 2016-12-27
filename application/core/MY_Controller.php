@@ -48,12 +48,23 @@ class MY_Controller extends CI_Controller
         return $this->M_GenFunc->insertdata($tabel,$data);
     }
 
-    public function deleteData($tabel, $data){
-        return $this->M_GenFunc->deletedata($tabel,$data);
+    public function deleteData($tabel, $where){
+        return $this->M_GenFunc->deletedata($tabel,$where);
     }
 
     public function updateData($tabel, $data, $where){
         return $this->M_GenFunc->updatedata($tabel,$data,$where);
     }
 
+    public function getDataTables($table,$column_order,$column_search,$order){
+        return $this->M_GenFunc->get_datatables($table,$column_order,$column_search,$order);
+    }
+
+    public function countFiltered($table,$column_order,$column_search,$order){
+        return $this->M_GenFunc->count_filtered($table,$column_order,$column_search,$order);
+    }
+
+    public function countAll($table,$column_order,$column_search,$order){
+        return $this->M_GenFunc->count_all($table,$column_order,$column_search,$order);
+    }
 }

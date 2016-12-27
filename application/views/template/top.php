@@ -13,7 +13,8 @@
 
     <!-- Bootstrap Core CSS -->
     <link href="<?=base_url()?>assets/panel/css/bootstrap.min.css" rel="stylesheet">
-
+    <link href="<?=base_url('assets/panel/datatables/css/dataTables.bootstrap.css')?>" rel="stylesheet">
+    <link href="<?=base_url('assets/panel/bootstrap-datepicker/css/bootstrap-datepicker3.min.css')?>" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="<?=base_url()?>assets/panel/css/sb-admin.css" rel="stylesheet">
     <link href="<?=base_url()?>assets/panel/css/sb-admin.css" rel="stylesheet">
@@ -31,6 +32,11 @@
 </head>
 
 <body>
+<script src="<?=base_url('assets/panel/js/jquery.js')?>"></script>
+<script src="<?=base_url('assets/panel/js/bootstrap.min.js')?>"></script>
+<script src="<?=base_url('assets/panel/datatables/js/jquery.dataTables.min.js')?>"></script>
+<script src="<?=base_url('assets/panel/datatables/js/dataTables.bootstrap.js')?>"></script>
+<script src="<?=base_url('assets/panel/bootstrap-datepicker/js/bootstrap-datepicker.min.js')?>"></script>
 
 <div id="wrapper">
 
