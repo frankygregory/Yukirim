@@ -14,6 +14,6 @@ class Report extends MY_Controller
             'title' => 'Report'
         );
 
-        parent::template('panel/report', $data);
+        parent::template('report', $data);
     }
 }

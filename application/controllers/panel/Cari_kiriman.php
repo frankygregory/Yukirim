@@ -14,23 +14,23 @@ class Cari_kiriman extends MY_Controller
         $data = array(
             'title' => 'All'
         );
-        parent::template('panel/cari_kiriman', $data);
+        parent::template('cari_kiriman', $data);
     }
 
-    public function privat()
+    public function privates()
     {
         $data = array(
             'title' => 'Private'
         );
-        parent::template('panel/cari_kiriman_private', $data);
+        parent::template('cari_kiriman_private', $data);
     }
 
-    public function publik()
+    public function publics()
     {
         $data = array(
             'title' => 'Public'
         );
-        parent::template('panel/cari_kiriman_public', $data);
+        parent::template('cari_kiriman_public', $data);
     }
 
     public function penawaran()
@@ -38,7 +38,7 @@ class Cari_kiriman extends MY_Controller
         $data = array(
             'title' => 'Penawaran'
         );
-        parent::template('panel/cari_kiriman_penawaran', $data);
+        parent::template('cari_kiriman_penawaran', $data);
     }
 
     public function detail()
@@ -46,6 +46,6 @@ class Cari_kiriman extends MY_Controller
         $data = array(
             'title' => 'Detail Kiriman'
         );
-        parent::template('panel/detail_kiriman', $data);
+        parent::template('detail_kiriman', $data);
     }
 }

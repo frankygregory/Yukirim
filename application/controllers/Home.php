@@ -51,7 +51,7 @@ class Home extends CI_Controller
             );
             $this->load->view('front/register', $data);
         } else {
-            $this->load->model('Registration_model');
+          //  $this->load->model('Registration_model');
             $this->Registration_model->doRegisterConsumer_model();
 
             $msg = '<div class="alert alert-success fade in block-inner">
@@ -66,7 +66,7 @@ class Home extends CI_Controller
 
     public function doRegisterExpedition()
     {
-        $this->load->model('Registration_model');
+       // $this->load->model('Registration_model');
 	    
 	if ($this->form_validation->run('registration_expedition') == FALSE) {
             $data = array(

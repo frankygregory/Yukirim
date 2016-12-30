@@ -24,6 +24,6 @@ class Kiriman extends MY_Controller
         //$this->load->library('genfunc');
         //echo $this->genfunc->test();
 
-        parent::template('panel/kiriman', $data);
+        parent::template('kiriman', $data);
     }
 }

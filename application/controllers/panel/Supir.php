@@ -14,6 +14,6 @@ class Supir extends MY_Controller
             'title' => 'Driver'
         );
 
-        parent::template('panel/supir', $data);
+        parent::template('supir', $data);
     }
 }

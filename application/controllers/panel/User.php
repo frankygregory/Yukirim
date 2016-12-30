@@ -16,6 +16,6 @@ class User extends MY_Controller
             'userdata' => $this->User_model->select_user()
         );
 
-        parent::template('panel/user', $data);
+        parent::template('user', $data);
     }
 }

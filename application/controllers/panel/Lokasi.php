@@ -13,6 +13,6 @@ class Lokasi extends MY_Controller
             'title' => 'Lokasi'
         );
 
-        parent::template('panel/lokasi', $data);
+        parent::template('lokasi', $data);
     }
 }

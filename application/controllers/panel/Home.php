@@ -14,6 +14,6 @@ class Home extends MY_Controller
         $data = array(
             'title' => 'Dashboard'
         );
-        parent::template('panel/home', $data);
+        parent::template('home', $data);
     }
 }

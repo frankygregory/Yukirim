@@ -13,6 +13,6 @@ class Rekanan extends MY_Controller
             'title' => 'Rekanan'
         );
 
-        parent::template('panel/rekanan', $data);
+        parent::template('rekanan', $data);
     }
 }

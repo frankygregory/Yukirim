@@ -13,15 +13,15 @@ class Kirim extends MY_Controller {
             'title' => 'All'
         );
 
-        parent::template('panel/kirim', $data);
+        parent::template('kirim', $data);
     }
 
     public function privates(){
         $data = array(
-            'title' => 'Private'
+            'title' => 'Privates'
         );
 
-        parent::template('panel/kirim_private', $data);
+        parent::template('kirim_private', $data);
     }
 
     public function publics(){
@@ -29,7 +29,7 @@ class Kirim extends MY_Controller {
             'title' => 'Public'
         );
 
-        parent::template('panel/kirim_public', $data);
+        parent::template('kirim_public', $data);
     }
 
     public function penawaran(){
@@ -37,7 +37,7 @@ class Kirim extends MY_Controller {
             'title' => 'Penawaran'
         );
 
-        parent::template('panel/kirim_penawaran', $data);
+        parent::template('kirim_penawaran', $data);
     }
 
     public function detail(){
@@ -45,7 +45,7 @@ class Kirim extends MY_Controller {
             'title' => 'Detail Kiriman'
         );
 
-        parent::template('panel/detail_kirim', $data);
+        parent::template('detail_kirim', $data);
     }
 
     public function kirimbarang(){
@@ -53,6 +53,6 @@ class Kirim extends MY_Controller {
             'title' => 'Kirim Barang'
         );
 
-        parent::template('panel/kirimbarang_form', $data);
+        parent::template('kirimbarang_form', $data);
     }
 }

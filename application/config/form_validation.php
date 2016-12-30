@@ -103,7 +103,15 @@ $config = array(
             'label' => 'Term & Conditions',
             'rules' => 'required',
         ),
-    )
+    ),
+
+    'kendaraan' => array(
+        array(
+            'field' => 'vehicleNomor',
+            'label' => 'Nomor Kendaraan',
+            'rules' => 'trim|required|min_length[8]|max_length[15]'
+        )
+    ),
 );
 
 $config['error_prefix'] = '<div class="error_prefix">';

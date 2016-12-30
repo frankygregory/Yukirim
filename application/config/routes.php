@@ -58,10 +58,32 @@ $route['login'] = 'login';
 $route['dologin'] = 'login/dologin';
 $route['logout'] = 'login/logout';
 
-$route['panel/(:any)'] = 'panel/$1';
-$route['expedition/(:any)'] = 'expedition/$1';
-$route['consumer/(:any)'] = 'consumer/$1';
+$route['dashboard'] = 'panel/home';
+$route['cari-kiriman'] = 'panel/cari_kiriman';
+$route['cari-kiriman/(:any)'] = 'panel/cari_kiriman/$1';
+//$route['cari-kiriman/private'] = 'panel/cari_kiriman/privates';
+//$route['cari-kiriman/public'] = 'panel/cari_kiriman/publics';
+//$route['cari-kiriman/penawaran'] = 'panel/cari_kiriman/penawaran';
+$route['alat'] = 'panel/alat';
+$route['kendaraan'] = 'panel/kendaraan';
 $route['kendaraan/(:any)'] = 'panel/kendaraan/$1/$2';
+$route['kirim'] = 'panel/kirim';
+$route['kirim/(:any)'] = 'panel/kirim/$1';
+//$route['kirim/private'] = 'panel/kirim/privates';
+//$route['kirim/public'] = 'panel/kirim/publics';
+//$route['kirim/penawaran'] = 'panel/kirim/penawaran';
+//$route['kirim/detail'] = 'panel/kirim/detail';
+//$route['kirim/kirim-barang'] = 'panel/kirim/kirimbarang';
+$route['kiriman'] = 'panel/kiriman';
+$route['lokasi'] = 'panel/lokasi';
+$route['rekanan'] = 'panel/rekanan';
+$route['report'] = 'panel/report';
+$route['supir'] = 'panel/supir';
+$route['tagihan'] = 'panel/tagihan';
+$route['user'] = 'panel/user';
+
+//$route['expedition/(:any)'] = 'expedition/$1';
+//$route['consumer/(:any)'] = 'consumer/$1';
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

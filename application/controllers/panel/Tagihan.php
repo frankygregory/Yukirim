@@ -13,6 +13,6 @@ class Tagihan extends MY_Controller
         $data = array(
             'title' => 'Tagihan'
         );
-        parent::template('panel/tagihan', $data);
+        parent::template('tagihan', $data);
     }
 }

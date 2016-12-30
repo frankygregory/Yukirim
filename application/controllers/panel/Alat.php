@@ -14,6 +14,6 @@ class Alat extends MY_Controller
         $data = array(
             'title' => 'Alat'
         );
-        parent::template('panel/alat', $data);
+        parent::template('alat', $data);
     }
 }

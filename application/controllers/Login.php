@@ -85,11 +85,12 @@ class Login extends CI_Controller
                                         $user[0]['user_fullname'],
                                         $user[0]['user_level'],
                                         $user[0]['role_id'],
-                                        'panel/common/menu',
-                                        'panel/home'
+                                        'menu',
+                                        'dashboard'
                                     );
 
-                                    redirect('panel/home');
+                                    redirect('dashboard');
+
 /*                                } elseif ($user[0]['user_level'] == 2) {
                                     if ($user[0]['role_id'] == 1) {
                                         $this->setuserdata(
