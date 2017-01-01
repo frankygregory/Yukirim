@@ -22,6 +22,20 @@ class MY_Controller extends CI_Controller
         }
     }
 
+    public function upload_file_settings($path = '', $max_size = '')
+    {
+        $config['upload_path'] = $path;
+        $config['allowed_types'] = 'jpg|png|jpeg';
+        $config['max_size'] = $max_size;
+        $config['remove_spaces'] = true;
+        $config['overwrite'] = false;
+        $config['encrypt_name'] = false;
+        $config['max_width'] = '';
+        $config['max_height'] = '';
+        $this->load->library('upload', $config);
+        $this->upload->initialize($config);
+    }
+
     public function template($file, $data){
         $this->load->view('template/top', $data);
         $this->load->view($file, $data);

@@ -5,19 +5,24 @@
 
 <script>
     $(document).ready(function() {
+
+        // bootstrap validation
+        $("input,textarea").not("[type=submit]").jqBootstrapValidation();
+
+        // add items
         var removeButton = "<input type='button' id='remove' class='btn btn-danger' value='Remove'>";
         $('#additems').click(function() {
             $('div.items:last').after($('div.items:first').clone());
             $('div.items:last').append(removeButton);
         });
 
+        // remove items
         $('#remove').click(function() {
             $(this).closest('div.items').remove();
         });
 
-
         // preview image
-        $("#imageBarang").on('change', function() {
+        $("#shipment_pictures").on('change', function() {
 
             var countFiles = $(this)[0].files.length;
             var imgPath = $(this)[0].value;

@@ -105,13 +105,50 @@ $config = array(
         ),
     ),
 
-    'kendaraan' => array(
+    'kirim' => array(
         array(
-            'field' => 'vehicleNomor',
-            'label' => 'Nomor Kendaraan',
-            'rules' => 'trim|required|min_length[8]|max_length[15]'
-        )
+            'field' => 'shipment_title',
+            'label' => 'Judul Kiriman',
+            'rules' => 'required'
+        ),
+        array(
+            'field' => 'shipment_information',
+            'label' => 'Keterangan',
+            'rules' => 'required'
+        ),
+        array(
+            'field' => 'location_from_name',
+            'label' => 'Lokasi Awal',
+            'rules' => 'required'
+        ),
+        array(
+            'field' => 'location_from_address',
+            'label' => 'Detail Lokasi Awal',
+            'rules' => 'required'
+        ),
+        array(
+            'field' => 'location_to_name',
+            'label' => 'Lokasi Tujuan',
+            'rules' => 'required'
+        ),
+        array(
+            'field' => 'shipment_delivery_date_to',
+            'label' => 'Tanggal Awal Kirim',
+            'rules' => 'required'
+        ),
+        array(
+            'field' => 'shipment_end_date',
+            'label' => 'Tanggal Akhir Kirim',
+            'rules' => 'required'
+        ),
+        array(
+            'field' => 'shipment_type',
+            'label' => 'Type Penawaran',
+            'rules' => 'required'
+        ),
     ),
+
+
 );
 
 $config['error_prefix'] = '<div class="error_prefix">';

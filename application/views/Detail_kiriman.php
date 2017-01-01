@@ -273,6 +273,7 @@
                 </div>
 
             </div>
+
         <input type="button" value="Kirim Penawaran" class="btn btn-success" data-toggle="modal" data-target="#penawaranmodal" style="float: right">
 
             <!-- Modal -->
