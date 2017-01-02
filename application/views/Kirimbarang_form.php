@@ -174,11 +174,13 @@
                     </div>
                 </div>
                 <div class="form-group" style="float: right">
+                    <input type="reset" class="btn btn-danger" value="Reset"/>
                     <a class="btn btn-success" onclick="postItems()"><i class="fa fa-plus"></i> Tambahkan Item</a>
                 </div>
                 <input type="hidden" id="temporaryItems" name="temporaryItems">
 
                 <script>
+                    var i = 0;
                     var arrayItems = [];
 
                     function postItems() {
@@ -233,9 +235,8 @@
 
                         row.insertCell(0).innerHTML = item_name;
                         row.insertCell(1).innerHTML = item_qty;
-                        row.insertCell(2).innerHTML = '<a class="btn btn-danger" onClick="javacsript:deleteRow(this,i)">Remove</a>';
+                        row.insertCell(2).innerHTML = '<a class="btn btn-danger" onClick="javacsript:deleteRow(this,i)"><i class="fa fa-remove"> Remove</a>';
 
-                        clear();
                     }
 
                     function deleteRow(obj, i) {
@@ -248,7 +249,7 @@
                         document.getElementById("temporaryItems").value = JSON.stringify(arrayItems);
                     }
 
-                    function clear(){
+                    function clearText(){
                         document.getElementById("item_name").value = "";
                         document.getElementById("item_desc").value = "";
                         document.getElementById("item_length").value = "";
