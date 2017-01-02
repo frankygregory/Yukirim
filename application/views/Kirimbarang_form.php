@@ -115,33 +115,30 @@
                 <div class="items">
                     <div class="form-group">
                         <label>Items</label>
-                        <input type="text" id="item_name" name="item_name" class="form-control"
-                               data-validation-matches-match="item_name"
-                               data-validation-matches-message=
-                               "Must match email address entered above"
-                               required>
+                        <input type="text" id="item_name" name="item_name" class="form-control"><span id="span_item_name"></span>
                     </div>
                     <div class="form-group">
                         <label>Deskripsi</label>
-                        <textarea class="form-control" id="item_desc" name="item_desc" cols="3" rows="3"></textarea>
+                        <textarea class="form-control" id="item_desc" name="item_desc" cols="3" rows="3"></textarea><span id="span_item_desc"></span>
                     </div>
                     <div class="form-group">
                         <label>Panjang</label>
-                        <input type="number" id="item_length" name="item_length" class="form-control">
+                        <input type="number" id="item_length" name="item_length" class="form-control"><span id="span_item_length"></span>
                     </div>
                     <div class="form-group">
                         <label>Lebar</label>
-                        <input type="number" id="item_width" name="item_width" class="form-control">
+                        <input type="number" id="item_width" name="item_width" class="form-control"><span id="span_item_width"></span>
                     </div>
                     <div class="form-group">
                         <div class="row">
                             <div class="col-md-6">
                                 <label>Tinggi</label>
-                                <input type="number" id="item_height" name="item_height" class="form-control">
+                                <input type="number" id="item_height" name="item_height" class="form-control"><span id="span_item_height"></span>
                             </div>
                             <div class="col-md-6"><br><br>
                                 <input type="radio" name="item_dimension_unit" value="1"> Meter &nbsp;&nbsp;
                                 <input type="radio" name="item_dimension_unit" value="2"> Centimeter
+                                <span id="span_item_dimension_unit"></span>
                             </div>
                         </div>
                     </div>
@@ -149,11 +146,12 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <label>Kubikasi</label>
-                                <input type="number" id="item_kubikasi" name="item_kubikasi" class="form-control">
+                                <input type="number" id="item_cubic" name="item_cubic" class="form-control"><span id="span_item_kubikasi"></span>
                             </div>
                             <div class="col-md-6"><br><br>
                                 <input type="radio" name="item_kubikasi_unit" value="1"> m3 &nbsp;&nbsp;
                                 <input type="radio" name="item_kubikasi_unit" value="2"> cm3
+                                <span id="span_item_kubikasi_unit"></span>
                             </div>
                         </div>
                     </div>
@@ -161,17 +159,18 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <label>Berat</label>
-                                <input type="number" class="form-control" id="item_weight" name="item_weight">
+                                <input type="number" class="form-control" id="item_weight" name="item_weight"><span id="span_item_weight"></span>
                             </div>
                             <div class="col-md-6"><br><br>
                                 <input type="radio" name="item_weight_unit" value="1"> Kilogram &nbsp;&nbsp;
                                 <input type="radio" name="item_weight_unit" value="2"> Ton
+                                <span id="span_item_weight_unit"></span>
                             </div>
                         </div>
                     </div>
                     <div class="form-group">
                         <label>Qty</label>
-                        <input type="number" class="form-control" id="item_qty" name="item_qty">
+                        <input type="number" class="form-control" id="item_qty" name="item_qty"><span id="span_item_qty"></span>
                     </div>
                 </div>
                 <div class="form-group" style="float: right">
@@ -180,7 +179,6 @@
                 <input type="hidden" id="temporaryItems" name="temporaryItems">
 
                 <script>
-                    var i = 0;
                     var arrayItems = [];
 
                     function postItems() {
@@ -190,11 +188,28 @@
                         var item_width = $('#item_width').val();
                         var item_height = $('#item_height').val();
                         var item_dimension_unit = $('input[name="item_dimension_unit"]:checked').val();
-                        var item_kubikasi = $('#item_kubikasi').val();
+                        var item_kubikasi = $('#item_cubic').val();
                         var item_kubikasi_unit = $('input[name="item_kubikasi_unit"]:checked').val();
                         var item_weight = $('#item_weight').val();
                         var item_weight_unit = $('input[name="item_weight_unit"]:checked').val();
                         var item_qty = $('#item_qty').val();
+
+                        try{
+                            if(item_name == "") throw "Items field required";
+                            if(item_desc == "") throw "Description field required";
+                            if(item_length == "") throw "Panjang field required";
+                            if(item_width == "") throw "Lebar field required";
+                            if(item_height == "") throw "Tinggi field required";
+                            if(item_dimension_unit == false) throw "Satuan tinggi required";
+                            if(item_kubikasi == "") throw "Kubikasi required";
+                            if(item_kubikasi_unit == false) throw "Satuan kubikasi required";
+                            if(item_weight == "") throw "Berat field required";
+                            if(item_weight_unit == false) throw "satuan berat required";
+                            if(item_qty == "") throw "Quantity field required";
+                        }catch(err){
+                            alert(err);
+                            return;
+                        }
 
                         arrayItems.push({
                             "item_name": item_name,
@@ -216,10 +231,9 @@
                         var rowCount = table.rows.length;
                         var row = table.insertRow(rowCount);
 
-                        row.insertCell(0).innerHTML = (i = i + 1);
-                        row.insertCell(1).innerHTML = item_name;
-                        row.insertCell(2).innerHTML = item_qty;
-                        row.insertCell(3).innerHTML = '<a class="btn btn-danger" onClick="javacsript:deleteRow(this,i)">Remove</a>';
+                        row.insertCell(0).innerHTML = item_name;
+                        row.insertCell(1).innerHTML = item_qty;
+                        row.insertCell(2).innerHTML = '<a class="btn btn-danger" onClick="javacsript:deleteRow(this,i)">Remove</a>';
 
                         clear();
                     }
@@ -241,11 +255,17 @@
                         document.getElementById("item_width").value = "";
                         document.getElementById("item_height").value = "";
                         document.getElementById("item_dimension_unit").value = "";
-                        document.getElementById("item_kubikasi").value = "";
+                        document.getElementById("item_cubic").value = "";
                         document.getElementById("item_kubikasi_unit").value = "";
                         document.getElementById("item_weight").value = "";
                         document.getElementById("item_weight_unit").value = "";
                         document.getElementById("item_qty").value = "";
+                    }
+
+                    function setStyle(inputId, spanId, label, display, borderColor){
+                        document.getElementById(spanId).innerHTML = label;
+                        document.getElementById(spanId).style.display = display;
+                        document.getElementById(inputId).style.borderColor = borderColor;
                     }
                 </script>
             </div>
@@ -260,7 +280,6 @@
             <table id="table" class="table table-striped table-bordered" cellspacing="0" width="100%">
                 <thead>
                 <tr>
-                    <th>No</th>
                     <th>Items</th>
                     <th>Qty</th>
                     <th>Action</th>

@@ -6,9 +6,6 @@
 <script>
     $(document).ready(function() {
 
-        // bootstrap validation
-        $("input,textarea").not("[type=submit]").jqBootstrapValidation();
-
         // add items
         var removeButton = "<input type='button' id='remove' class='btn btn-danger' value='Remove'>";
         $('#additems').click(function() {
@@ -52,7 +49,6 @@
             }
         });
     });
-
 
     function getTanggal(id) {
         $("#" + id).datepicker({

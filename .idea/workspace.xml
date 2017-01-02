@@ -26,9 +26,8 @@
       <file leaf-file-name="Kirim.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/controllers/panel/Kirim.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="57" column="33" selection-start="1090" selection-end="1090" vertical-scroll-proportion="-5.8846154" vertical-offset="816" max-vertical-offset="2295">
+            <state line="57" column="33" selection-start="1090" selection-end="1090" vertical-scroll-proportion="3.9230769" vertical-offset="1071" max-vertical-offset="2465">
               <folding>
-                <element signature="e#1706#1767#0" expanded="false" />
                 <marker date="1483281657562" expanded="true" signature="314:338" placeholder="select * fro..m_shipment..." />
                 <marker date="1483281657562" expanded="true" signature="3659:3725" placeholder="select max(s..m_shipment..." />
               </folding>
@@ -36,40 +35,29 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Kirim.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/Kirim.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="26" selection-start="607" selection-end="607" vertical-scroll-proportion="-13.076923" vertical-offset="0" max-vertical-offset="3332">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="bottom.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="bottom.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/template/bottom.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="45" selection-start="151" selection-end="151" vertical-scroll-proportion="0.27175844" vertical-offset="0" max-vertical-offset="1207">
+            <state line="17" column="47" selection-start="486" selection-end="486" vertical-scroll-proportion="-11.115385" vertical-offset="0" max-vertical-offset="1139">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MY_Controller.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/core/MY_Controller.php">
+      <file leaf-file-name="top.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/template/top.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="72" column="20" selection-start="1989" selection-end="1989" vertical-scroll-proportion="-26.23077" vertical-offset="542" max-vertical-offset="1513">
+            <state line="39" column="91" selection-start="1891" selection-end="1891" vertical-scroll-proportion="-9.807693" vertical-offset="408" max-vertical-offset="3094">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Kirimbarang_form.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Kirimbarang_form.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/views/Kirimbarang_form.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="121" column="39" selection-start="4498" selection-end="4498" vertical-scroll-proportion="-15.269231" vertical-offset="1660" max-vertical-offset="6341">
-              <folding>
-                <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#1;n#div#2;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
+            <state line="281" column="20" selection-start="13387" selection-end="13387" vertical-scroll-proportion="1.8963636" vertical-offset="3734" max-vertical-offset="6664">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -77,7 +65,7 @@
       <file leaf-file-name="Kendaraan.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/controllers/panel/Kendaraan.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="79" column="20" selection-start="3178" selection-end="3178" vertical-scroll-proportion="-46.923077" vertical-offset="123" max-vertical-offset="3077">
+            <state line="79" column="20" selection-start="3178" selection-end="3178" vertical-scroll-proportion="0.0" vertical-offset="123" max-vertical-offset="3077">
               <folding />
             </state>
           </provider>
@@ -86,7 +74,7 @@
       <file leaf-file-name="Kendaraan.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/Kendaraan.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="83" column="30" selection-start="2919" selection-end="2919" vertical-scroll-proportion="-7.6923075" vertical-offset="1211" max-vertical-offset="5661">
+            <state line="83" column="30" selection-start="2919" selection-end="2919" vertical-scroll-proportion="0.0" vertical-offset="1211" max-vertical-offset="5661">
               <folding />
             </state>
           </provider>
@@ -148,10 +136,10 @@
         <option value="$PROJECT_DIR$/application/core/MY_Controller.php" />
         <option value="$PROJECT_DIR$/application/config/form_validation.php" />
         <option value="$PROJECT_DIR$/application/controllers/panel/Kirim.php" />
-        <option value="$PROJECT_DIR$/application/views/Kirim.php" />
         <option value="$PROJECT_DIR$/application/views/Kirim_detail.php" />
-        <option value="$PROJECT_DIR$/application/views/template/top.php" />
+        <option value="$PROJECT_DIR$/application/views/Kirim.php" />
         <option value="$PROJECT_DIR$/application/views/template/bottom.php" />
+        <option value="$PROJECT_DIR$/application/views/template/top.php" />
         <option value="$PROJECT_DIR$/application/views/Kirimbarang_form.php" />
       </list>
     </option>
@@ -223,28 +211,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="panel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="usip" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="yukirim" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="panel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bootstrap-validation" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -471,7 +437,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20166163" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20468278" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -479,11 +445,11 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -501,9 +467,9 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3694171" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -730,76 +696,59 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/Kendaraan.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="83" column="30" selection-start="2919" selection-end="2919" vertical-scroll-proportion="-7.6923075" vertical-offset="1211" max-vertical-offset="5661">
+        <state line="83" column="30" selection-start="2919" selection-end="2919" vertical-scroll-proportion="0.0" vertical-offset="1211" max-vertical-offset="5661">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/panel/Kendaraan.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="79" column="20" selection-start="3178" selection-end="3178" vertical-scroll-proportion="-46.923077" vertical-offset="123" max-vertical-offset="3077">
+        <state line="79" column="20" selection-start="3178" selection-end="3178" vertical-scroll-proportion="0.0" vertical-offset="123" max-vertical-offset="3077">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/Kirimbarang_form - Copy.php">
+    <entry file="file://$PROJECT_DIR$/application/views/Kirim.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4097">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/panel/bootstrap-validation/jqBootstrapValidation.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="15470">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/template/top.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="0" selection-start="2115" selection-end="2115" vertical-scroll-proportion="-0.5254545" vertical-offset="1020" max-vertical-offset="3111">
+        <state line="67" column="40" selection-start="2632" selection-end="2632" vertical-scroll-proportion="2.0230906" vertical-offset="0" max-vertical-offset="1836">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/core/MY_Controller.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="72" column="20" selection-start="1989" selection-end="1989" vertical-scroll-proportion="-26.23077" vertical-offset="542" max-vertical-offset="1513">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/Kirimbarang_form.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="121" column="39" selection-start="4498" selection-end="4498" vertical-scroll-proportion="-15.269231" vertical-offset="1660" max-vertical-offset="6341">
-          <folding>
-            <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#1;n#div#2;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/panel/Kirim.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="33" selection-start="1090" selection-end="1090" vertical-scroll-proportion="-5.8846154" vertical-offset="816" max-vertical-offset="2295">
-          <folding>
-            <element signature="e#1706#1767#0" expanded="false" />
-            <marker date="1483281657562" expanded="true" signature="314:338" placeholder="select * fro..m_shipment..." />
-            <marker date="1483281657562" expanded="true" signature="3659:3725" placeholder="select max(s..m_shipment..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/Kirim.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="26" selection-start="607" selection-end="607" vertical-scroll-proportion="-13.076923" vertical-offset="0" max-vertical-offset="3332">
+        <state line="72" column="20" selection-start="1989" selection-end="1989" vertical-scroll-proportion="1.2113677" vertical-offset="542" max-vertical-offset="1513">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/template/bottom.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="45" selection-start="151" selection-end="151" vertical-scroll-proportion="0.27175844" vertical-offset="0" max-vertical-offset="1207">
+        <state line="17" column="47" selection-start="486" selection-end="486" vertical-scroll-proportion="-11.115385" vertical-offset="0" max-vertical-offset="1139">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/panel/Kirim.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="57" column="33" selection-start="1090" selection-end="1090" vertical-scroll-proportion="3.9230769" vertical-offset="1071" max-vertical-offset="2465">
+          <folding>
+            <marker date="1483281657562" expanded="true" signature="314:338" placeholder="select * fro..m_shipment..." />
+            <marker date="1483281657562" expanded="true" signature="3659:3725" placeholder="select max(s..m_shipment..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/template/top.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="91" selection-start="1891" selection-end="1891" vertical-scroll-proportion="-9.807693" vertical-offset="408" max-vertical-offset="3094">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/Kirimbarang_form.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="281" column="20" selection-start="13387" selection-end="13387" vertical-scroll-proportion="1.8963636" vertical-offset="3734" max-vertical-offset="6664">
           <folding />
         </state>
       </provider>
