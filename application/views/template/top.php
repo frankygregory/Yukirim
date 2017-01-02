@@ -38,6 +38,7 @@
 <script src="<?=base_url('assets/panel/js/bootstrap.min.js')?>"></script>
 <script src="<?=base_url('assets/panel/datatables/js/jquery.dataTables.min.js')?>"></script>
 <script src="<?=base_url('assets/panel/datatables/js/dataTables.bootstrap.js')?>"></script>
+<script src="<?=base_url('assets/panel/mask-money/jquery.maskMoney.js')?>"></script>
 <!--<script src="--><?//=base_url('assets/panel/bootstrap-datepicker/js/bootstrap-datepicker.min.js')?><!--"></script>-->
 
 

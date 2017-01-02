@@ -66,7 +66,7 @@
                             foreach($data as $data){ ?>
                                 <tr>
                                     <td>
-                                        <a href="<?= site_url() ?>cari_kiriman/detail"><h4><?=$data['shipment_title']?></h4></a>
+                                        <a href="<?= site_url() ?>kirim/detail/<?=$data['shipment_id']?>"><h4><?=$data['shipment_title']?></h4></a>
 <!--                                        <img src="--><?//= base_url() ?><!--/assets/panel/images/gambar-01.jpg" width="110">-->
                                         <h5>400 Kg</h5>
                                     </td>

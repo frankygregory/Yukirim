@@ -96,16 +96,6 @@
             ],
         });
 
-        //datepicker
-        $('.datepicker').datepicker({
-            autoclose: true,
-            format: "yyyy-mm-dd",
-            todayHighlight: true,
-            orientation: "top auto",
-            todayBtn: true,
-            todayHighlight: true,
-        });
-
         $("input").change(function(){
             $(this).parent().parent().removeClass('has-error');
             $(this).next().empty();
