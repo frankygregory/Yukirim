@@ -76,6 +76,7 @@ $route['kirim/penawaran'] = 'panel/kirim/penawaran';
 $route['kirim/detail/(:any)'] = 'panel/kirim/detail/$1';
 $route['kirim/kirimbarang'] = 'panel/kirim/kirimbarang';
 $route['kirim/dokirimbarang'] = 'panel/kirim/doKirimBarang';
+$route['kirim/updatekirimbarang'] = 'panel/kirim/updatekirimBarang';
 $route['kirim/update-items'] = 'panel/kirim/updateItems';
 $route['kiriman'] = 'panel/kiriman';
 $route['lokasi'] = 'panel/lokasi';

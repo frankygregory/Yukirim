@@ -51,6 +51,7 @@ class Kirim extends MY_Controller
         $data = array(
             'title' => 'Kirim Barang',
             'type' => 'new',
+            'id' => '',
             'shipment_title' => '',
             'shipment_information' => '',
             'location_from_name' => '',
@@ -77,6 +78,7 @@ class Kirim extends MY_Controller
         $data = array(
             'title' => 'Kirim Barang',
             'type' => 'edit',
+            'id' => $id,
             'shipment_title' => $data[0]['shipment_title'],
             'shipment_information' => $data[0]['shipment_information'],
             'location_from_name' => $data[0]['location_from_name'],
@@ -101,13 +103,17 @@ class Kirim extends MY_Controller
     {
         if ($this->form_validation->run('kirim') == FALSE) {
             $errors = validation_errors();
-            echo json_encode(array("error" => $errors));
+            echo json_encode(array("error" => "<div class='alert alert-warning alert-dismissible' role='alert'>
+					<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
+					<strong>Error!</strong> Data gagal tersimpan.<br>" . $errors . " </div>"));
         } else {
 
             $items = JSON_DECODE($this->input->post('temporaryItems'), TRUE);
 
             if (count($items) <= 0) {
-                echo json_encode(array("error" => 'Isi items dengan lengkap'));
+                echo json_encode(array("error" => "<div class='alert alert-warning alert-dismissible' role='alert'>
+					<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
+					<strong>Error!</strong> Item harus terisi.<br>" . $errors . " </div>"));
             } else {
 
 //                if ($_FILES['shipment_pictures']['name']) {
@@ -137,11 +143,10 @@ class Kirim extends MY_Controller
                     'order_type' => $this->input->post('order_type'),
                     'shipment_type' => $this->input->post('shipment_type')
                 );
+
                 $this->insertData('m_shipment', $data);
 
-                $lastId = $this->db->query("select max(shipment_id) as max_value, shipment_id  from m_shipment")->result_array();
-
-                if ($lastId[0]['max_value'] > 0 && $lastId[0]['max_value'] != null) {
+					$lastid = $this->db->insert_id();
                     for ($i = 0; $i < count($items); $i++) {
                         $data = array(
                             'item_name' => $items[$i]['item_name'],
@@ -154,20 +159,53 @@ class Kirim extends MY_Controller
                             'item_weight' => $items[$i]['item_weight'],
                             'item_weight_unit' => $items[$i]['item_weight_unit'],
                             'item_qty' => $items[$i]['item_qty'],
-                            'shipment_id' => $lastId[0]['shipment_id'],
+                            'shipment_id' => $lastid,
                             'created_date' => date('Y-m-d G:i:s'),
                             'created_by' => $this->session->userdata('username'),
                         );
 
                         $this->insertData('m_shipment_details', $data);
                     }
-                    echo json_encode(array("status" => TRUE));
-                }
+                    echo json_encode(array("status" => TRUE, "msg" => "<div class='alert alert-success alert-dismissible' role='alert'>
+					<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
+					<strong>Success!</strong> Data telah berhasil disimpan.
+					</div>"));
             }
         }
     }
 //        }
 //    }
+
+	public function updatekirimBarang(){
+        if ($this->form_validation->run('kirim') == FALSE) {
+            $errors = validation_errors();
+            echo json_encode(array("error" => "<div class='alert alert-warning alert-dismissible' role='alert'>
+					<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
+					<strong>Warning!</strong> Data gagal diubah.<br>" . $errors . " </div>"));
+        } else {
+		$id = $this->input->post("id");
+				$data = array(
+                    'shipment_title' => $this->input->post('shipment_title'),
+                    'shipment_information' => $this->input->post('shipment_information'),
+                    'location_from_name' => $this->input->post('location_from_name'),
+                    'location_from_address' => $this->input->post('location_from_address'),
+                    'location_to_name' => $this->input->post('location_to_name'),
+                    'location_to_address' => $this->input->post('location_to_address'),
+                    'shipment_delivery_date_from' => date('Y-m-d G:i:s'),
+                    'shipment_delivery_date_to' => $this->input->post('shipment_delivery_date_to'),
+                    'shipment_end_date' => $this->input->post('shipment_end_date'),
+                    'shipment_price' => $this->input->post('shipment_price'),
+                    'order_type' => $this->input->post('order_type'),
+                    'shipment_type' => $this->input->post('shipment_type')
+                );
+				
+				$this->db->update("m_shipment", $data, array("shipment_id" => $id));
+				echo json_encode(array("status" => TRUE, "msg" => "<div class='alert alert-success alert-dismissible' role='alert'>
+					<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
+					<strong>Success!</strong> Data telah berhasil diubah.
+					</div>"));
+		}
+}
 
     public function ajaxLoad($id)
     {

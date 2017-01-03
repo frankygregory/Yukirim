@@ -17,10 +17,12 @@
 </div>
 <!-- /.row -->
 
+<div id="successResult"></div>
 <div id="errorResult" class="has-error"></div>
 <form role="form" id="kirimForm" name="kirimForm" method="post" action="<?= site_url('kirim/dokirimbarang') ?>"
       enctype="multipart/form-data">
-<input type="hidden" name="type" value="<?= $type ?>">
+	<input type="hidden" id="type" name="type" value="<?= $type ?>">
+	<input type="hidden" name="id" value="<?= $id ?>">
 
 <div class="row">
     <div class="col-md-6">
@@ -227,6 +229,7 @@
                                 alert(err);
                                 return;
                             }
+							
 
                             arrayItems.push({
                                 "item_name": item_name,
@@ -244,15 +247,17 @@
 
                             document.getElementById("temporaryItems").value = JSON.stringify(arrayItems);
                             console.log(arrayItems);
-
-                            var rowCount = table.rows.length;
+							
+							var rowCount = table.rows.length;
                             var row = table.insertRow(rowCount);
+							
+							console.log("=>"+rowCount);
 
                             row.insertCell(0).innerHTML = item_name;
                             row.insertCell(1).innerHTML = item_qty;
                             row.insertCell(2).innerHTML = '<a class="btn btn-danger" onClick="javacsript:deleteRow(this,i)"><i class="fa fa-remove"></i> Remove</a>';
-
-                        }
+							
+						}
 
                         function deleteRow(obj, i) {
                             index = obj.parentNode.parentNode.rowIndex;
@@ -312,8 +317,8 @@
                             <td><?= $sd['item_name'] ?></td>
                             <td><?= $sd['item_qty'] ?></td>
                             <td>
-                                <button type="button" id="btnEdit<?=$sd['shipment_details_id']?>" class="btn btn-primary" onclick="editData(<?=$sd['shipment_details_id']?>, this.id)">Edit</button>
-                                <button type="button" id="btnDelete<?=$sd['shipment_details_id']?>" class="btn btn-danger" onclick="deleteData(<?=$sd['shipment_details_id']?>, this.id)">Delete</button>
+                                <button type="button" id="btnEdit<?=$sd['shipment_details_id']?>" class="btn btn-primary" onclick="editItems(<?=$sd['shipment_details_id']?>, this.id)">Edit</button>
+                                <button type="button" id="btnDelete<?=$sd['shipment_details_id']?>" class="btn btn-danger" onclick="deleteItems(<?=$sd['shipment_details_id']?>, this.id)">Delete</button>
                             </td>
                         </tr>
                     <?php
@@ -381,10 +386,17 @@
 </form>
 
 <script>
-    var table;
+   var type = $("#type").val();
+   var url;
 
     function doKirim() {
-        var url = "<?=site_url('kirim/dokirimbarang')?>";
+	
+		if(type == "new"){
+			url = "<?=site_url('kirim/dokirimbarang')?>";
+		}else if(type == "edit"){
+			url = "<?=site_url('kirim/updatekirimbarang')?>";
+		}
+	
         var formData = new FormData($("#kirimForm")[0]);
         $("#btnSave").text('Proses...');
 
@@ -398,7 +410,7 @@
             success: function (data) {
                 console.log(data);
                 if (data.status) {
-
+					$('#successResult').append(data.msg);
                 } else {
                     $('#errorResult').append(data.error);
                 }
@@ -413,9 +425,10 @@
 
             }
         });
+		
     }
 
-    function editData(id, div){
+    function editItems(id, div){
         $('#form')[0].reset(); // reset form on modals
         $('.form-group').removeClass('has-error'); // clear error class
         $('.help-block').empty(); // clear error string
@@ -434,11 +447,14 @@
                 $('[name="item_length"]').val(data.item_length);
                 $('[name="item_width"]').val(data.item_width);
                 $('[name="item_height"]').val(data.item_height);
+                $('[name="item_dimension_unit"]').val(data.item_dimension_unit);
                 $('[name="item_cubic"]').val(data.item_kubikasi);
+                $('[name="item_kubikasi_unit"]').val(data.item_kubikasi_unit);
                 $('[name="item_weight"]').val(data.item_weight);
+                $('[name="item_weight_unit"]').val(data.item_weight_unit);
                 $('[name="item_qty"]').val(data.item_qty);
-                $('#modal_form').modal('show'); // show bootstrap modal when complete loaded
-                $('.modal-title').text('Ubah Items'); // Set title to Bootstrap modal title
+                $('#modal_form').modal('show'); 
+                $('.modal-title').text('Ubah Items'); 
                 $('#'+div).text("Edit");
             },
             error: function (jqXHR, textStatus, errorThrown) {
