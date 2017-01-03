@@ -103,7 +103,7 @@
             <i class="fa fa-bars"></i>
         </button>
         <!-- End Toggle Nav Link For Mobiles -->
-        <a class="navbar-brand" href="index.html">
+        <a class="navbar-brand" href="<?=site_url()?>">
             <img alt="" src="<?=base_url()?>assets/front/images/yukirim.png">
         </a>
     </div>

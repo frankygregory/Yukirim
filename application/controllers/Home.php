@@ -42,6 +42,14 @@ class Home extends CI_Controller
         $this->load->view('front/register', $data);
     }
 
+    public function privacy_policy(){
+        $data = array(
+            'title' => 'Kebijakan Privasi',
+            'active' => array('', '', '', 'active'),
+        );
+        $this->load->view('front/privacy_policy', $data);
+    }
+
     public function doRegisterConsumer()
     {
         if ($this->form_validation->run('registration_consumer') == FALSE) {

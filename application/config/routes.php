@@ -52,6 +52,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 $route['default_controller'] = 'home';
 $route['contact'] = 'home/contact';
+$route['kebijakan-privasi'] = 'home/privacy_policy';
 
 $route['register'] = 'home/register';
 $route['login'] = 'login';
