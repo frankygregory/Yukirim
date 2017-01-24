@@ -56,8 +56,10 @@ class Kirim extends MY_Controller
             'shipment_information' => '',
             'location_from_name' => '',
             'location_from_address' => '',
+            'location_from_latlng' => '',
             'location_to_name' => '',
             'location_to_address' => '',
+            'location_to_latlng' => '',
             'shipment_delivery_date_to' => '',
             'shipment_end_date' => '',
             'shipment_price' => 0,
@@ -83,8 +85,10 @@ class Kirim extends MY_Controller
             'shipment_information' => $data[0]['shipment_information'],
             'location_from_name' => $data[0]['location_from_name'],
             'location_from_address' => $data[0]['location_from_address'],
+            'location_from_latlng' => $data[0]['location_from_lat'].", ".$data[0]['location_from_lng'],
             'location_to_name' => $data[0]['location_to_name'],
             'location_to_address' => $data[0]['location_to_address'],
+            'location_to_latlng' => $data[0]['location_to_lat'].", ".$data[0]['location_to_lng'],
             'shipment_delivery_date_to' => $data[0]['shipment_delivery_date_to'],
             'shipment_end_date' => $data[0]['shipment_end_date'],
             'shipment_price' => $data[0]['shipment_price'],
@@ -128,14 +132,25 @@ class Kirim extends MY_Controller
 //                            $shipment_pictures = $image['file_name'];
 //                        }
 
+                $location_from_latlng = $this->input->post('location_from_latlng');
+                $location_from_lat = substr($location_from_latlng,0,strpos($location_from_latlng,",")-1);
+                $location_from_lng = substr($location_from_latlng,strpos($location_from_latlng," ")+1);
+                $location_to_latlng = $this->input->post('location_to_latlng');
+                $location_to_lat = substr($location_to_latlng,0,strpos($location_to_latlng,",")-1);
+                $location_to_lng = substr($location_to_latlng,strpos($location_to_latlng," ")+1);
+
                 $data = array(
                     'shipment_title' => $this->input->post('shipment_title'),
                     'shipment_information' => $this->input->post('shipment_information'),
 //                            'shipment_pictures' => $shipment_pictures,
                     'location_from_name' => $this->input->post('location_from_name'),
                     'location_from_address' => $this->input->post('location_from_address'),
+                    'location_from_lat' => $location_from_lat,
+                    'location_from_lng' => $location_from_lng,
                     'location_to_name' => $this->input->post('location_to_name'),
                     'location_to_address' => $this->input->post('location_to_address'),
+                    'location_to_lat' => $location_to_lat,
+                    'location_to_lng' => $location_to_lng,
                     'shipment_delivery_date_from' => date('Y-m-d G:i:s'),
                     'shipment_delivery_date_to' => $this->input->post('shipment_delivery_date_to'),
                     'shipment_end_date' => $this->input->post('shipment_end_date'),
@@ -146,30 +161,31 @@ class Kirim extends MY_Controller
 
                 $this->insertData('m_shipment', $data);
 
-					$lastid = $this->db->insert_id();
-                    for ($i = 0; $i < count($items); $i++) {
-                        $data = array(
-                            'item_name' => $items[$i]['item_name'],
-                            'item_desc' => $items[$i]['item_desc'],
-                            'item_length' => $items[$i]['item_length'],
-                            'item_width' => $items[$i]['item_width'],
-                            'item_height' => $items[$i]['item_height'],
-                            'item_dimension_unit' => $items[$i]['item_dimension_unit'],
-                            'item_kubikasi' => $items[$i]['item_kubikasi'],
-                            'item_weight' => $items[$i]['item_weight'],
-                            'item_weight_unit' => $items[$i]['item_weight_unit'],
-                            'item_qty' => $items[$i]['item_qty'],
-                            'shipment_id' => $lastid,
-                            'created_date' => date('Y-m-d G:i:s'),
-                            'created_by' => $this->session->userdata('username'),
-                        );
+                //Insert detail data
+				$lastid = $this->db->insert_id();
+                for ($i = 0; $i < count($items); $i++) {
+                    $data = array(
+                        'item_name' => $items[$i]['item_name'],
+                        'item_desc' => $items[$i]['item_desc'],
+                        'item_length' => $items[$i]['item_length'],
+                        'item_width' => $items[$i]['item_width'],
+                        'item_height' => $items[$i]['item_height'],
+                        'item_dimension_unit' => $items[$i]['item_dimension_unit'],
+                        'item_kubikasi' => $items[$i]['item_kubikasi'],
+                        'item_weight' => $items[$i]['item_weight'],
+                        'item_weight_unit' => $items[$i]['item_weight_unit'],
+                        'item_qty' => $items[$i]['item_qty'],
+                        'shipment_id' => $lastid,
+                        'created_date' => date('Y-m-d G:i:s'),
+                        'created_by' => $this->session->userdata('username'),
+                    );
 
-                        $this->insertData('m_shipment_details', $data);
-                    }
-                    echo json_encode(array("status" => TRUE, "msg" => "<div class='alert alert-success alert-dismissible' role='alert'>
-					<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
-					<strong>Success!</strong> Data telah berhasil disimpan.
-					</div>"));
+                    $this->insertData('m_shipment_details', $data);
+                }
+                echo json_encode(array("status" => TRUE, "msg" => "<div class='alert alert-success alert-dismissible' role='alert'>
+				<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
+				<strong>Success!</strong> Data telah berhasil disimpan.
+				</div>"));
             }
         }
     }
@@ -183,14 +199,26 @@ class Kirim extends MY_Controller
 					<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
 					<strong>Warning!</strong> Data gagal diubah.<br>" . $errors . " </div>"));
         } else {
-		$id = $this->input->post("id");
+            $id = $this->input->post("id");
+
+            $location_from_latlng = $this->input->post('location_from_latlng');
+            $location_from_lat = substr($location_from_latlng,0,strpos($location_from_latlng,",")-1);
+            $location_from_lng = substr($location_from_latlng,strpos($location_from_latlng," ")+1);
+            $location_to_latlng = $this->input->post('location_to_latlng');
+            $location_to_lat = substr($location_to_latlng,0,strpos($location_to_latlng,",")-1);
+            $location_to_lng = substr($location_to_latlng,strpos($location_to_latlng," ")+1);
+
 				$data = array(
                     'shipment_title' => $this->input->post('shipment_title'),
                     'shipment_information' => $this->input->post('shipment_information'),
                     'location_from_name' => $this->input->post('location_from_name'),
                     'location_from_address' => $this->input->post('location_from_address'),
+                    'location_from_lat' => $location_from_lat,
+                    'location_from_lng' => $location_from_lng,
                     'location_to_name' => $this->input->post('location_to_name'),
                     'location_to_address' => $this->input->post('location_to_address'),
+                    'location_to_lat' => $location_to_lat,
+                    'location_to_lng' => $location_to_lng,
                     'shipment_delivery_date_from' => date('Y-m-d G:i:s'),
                     'shipment_delivery_date_to' => $this->input->post('shipment_delivery_date_to'),
                     'shipment_end_date' => $this->input->post('shipment_end_date'),
