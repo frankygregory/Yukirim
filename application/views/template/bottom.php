@@ -22,6 +22,9 @@
         $("#shipment_pictures").on('change', function() {
 
             var countFiles = $(this)[0].files.length;
+
+            //$.each( obj, function( key, value ) {alert( key + ": " + value );});
+            $('#shipment_pictures_name').val($(this)[0].files[0].name);
             var imgPath = $(this)[0].value;
             var extn = imgPath.substring(imgPath.lastIndexOf('.') + 1).toLowerCase();
             var image_holder = $("#image-holder");
@@ -33,9 +36,10 @@
                     {
                         var reader = new FileReader();
                         reader.onload = function(e) {
-                            $("<img />", {
+                            $("<img/>", {
                                 "src": e.target.result,
-                                "class": "thumb-image"
+                                "class": "thumb-image",
+                                "width": "100%",
                             }).appendTo(image_holder);
                         }
                         image_holder.show();

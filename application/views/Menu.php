@@ -7,22 +7,7 @@
     if ($this->session->userdata('role_id') == 0 || $this->session->userdata('role_id') == 2) {
         ?>
         <li>
-            <a href="javascript:;" data-toggle="collapse" data-target="#cari-kiriman"><i
-                    class="fa fa-fw fa-search-plus"></i> Cari Kiriman <i class="fa fa-fw fa-caret-down"></i></a>
-            <ul id="cari-kiriman" class="collapse">
-                <li>
-                    <a href="<?= base_url() ?>cari-kiriman/">All</a>
-                </li>
-                <li>
-                    <a href="<?= base_url() ?>cari-kiriman/privates">Private</a>
-                </li>
-                <li>
-                    <a href="<?= base_url() ?>cari-kiriman/publics">Public</a>
-                </li>
-                <li>
-                    <a href="<?= base_url() ?>cari-kiriman/penawaran">Penawaran</a>
-                </li>
-            </ul>
+            <a href="<?= base_url() ?>cari-kiriman/"><i class="fa fa-fw fa-search-plus"></i> Cari Kiriman</a>
         </li>
     <?php
     }
@@ -30,22 +15,7 @@
     if ($this->session->userdata('role_id') == 0 || $this->session->userdata('role_id') == 1) {
         ?>
         <li>
-            <a href="javascript:;" data-toggle="collapse" data-target="#kirim"><i class="fa fa-fw fa-send"></i> Kirim <i
-                    class="fa fa-fw fa-caret-down"></i></a>
-            <ul id="kirim" class="collapse">
-                <li>
-                    <a href="<?= base_url() ?>kirim/">All</a>
-                </li>
-                <li>
-                    <a href="<?= base_url() ?>kirim/privates">Private</a>
-                </li>
-                <li>
-                    <a href="<?= base_url() ?>kirim/publics">Public</a>
-                </li>
-                <li>
-                    <a href="<?= base_url() ?>kirim/penawaran">Penawaran</a>
-                </li>
-            </ul>
+            <a href="<?= base_url() ?>kirim/"><i class="fa fa-fw fa-send"></i> Kirim</a>
         </li>
     <?php } ?>
     <li>

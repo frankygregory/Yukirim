@@ -15,6 +15,7 @@
     <link href="<?=base_url()?>assets/panel/css/bootstrap.min.css" rel="stylesheet">
     <link href="<?=base_url('assets/panel/datatables/css/dataTables.bootstrap.css')?>" rel="stylesheet">
     <link href="<?=base_url()?>assets/panel/jqueryui/jquery-ui.css" rel="stylesheet" >
+    <link href="http://hayageek.github.io/jQuery-Upload-File/4.0.10/uploadfile.css" rel="stylesheet">
 <!--    <link href="--><?//=base_url('assets/panel/bootstrap-datepicker/css/bootstrap-datepicker3.min.css')?><!--" rel="stylesheet">-->
     <!-- Custom CSS -->
     <link href="<?=base_url()?>assets/panel/css/sb-admin.css" rel="stylesheet">
@@ -35,6 +36,8 @@
 <body>
 <script src="<?=base_url('assets/panel/js/jquery.js')?>"></script>
 <script src="<?= base_url('assets/panel/jqueryui/jquery-ui.js')?>"></script>
+<script src="<?=base_url('assets/panel/js/jquery.uploadfile.min.js')?>"></script>
+<script src="<?=base_url('assets/panel/js/jquery.form.min.js')?>"></script>
 <script src="<?=base_url('assets/panel/js/bootstrap.min.js')?>"></script>
 <script src="<?=base_url('assets/panel/datatables/js/jquery.dataTables.min.js')?>"></script>
 <script src="<?=base_url('assets/panel/datatables/js/dataTables.bootstrap.js')?>"></script>
@@ -175,3 +178,23 @@
         </div>
         <!-- /.navbar-collapse -->
     </nav>
+
+<script>
+function getDistanceFromLatLonInKm(lat1,lon1,lat2,lon2) {
+  var R = 6371; // Radius of the earth in km
+  var dLat = deg2rad(lat2-lat1);  // deg2rad below
+  var dLon = deg2rad(lon2-lon1); 
+  var a = 
+    Math.sin(dLat/2) * Math.sin(dLat/2) +
+    Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) * 
+    Math.sin(dLon/2) * Math.sin(dLon/2)
+    ; 
+  var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
+  var d = R * c; // Distance in km
+  return d;
+}
+
+function deg2rad(deg) {
+  return deg * (Math.PI/180);
+}
+</script>

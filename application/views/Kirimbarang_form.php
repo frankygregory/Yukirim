@@ -40,11 +40,17 @@
         <div class="form-group">
             <label>Foto Barang</label>
             <input type="file" id="shipment_pictures" name="shipment_pictures" class="form-control">
+            <input type="hidden" id="shipment_pictures_name" name="shipment_pictures_name" value="<?=$shipment_pictures?>">
         </div>
     </div>
-
     <div class="col-md-6">
-        <div id="image-holder"></div>
+        <div id="image-holder">
+            <?php
+            if (strlen($shipment_pictures)>0) {
+              echo "<img src='".base_url()."/assets/panel/images/".$shipment_pictures."' width='100%'>";
+            }
+            ?>
+        </div>
     </div>
 </div>
 
@@ -58,9 +64,9 @@
             </div>
             <div class="panel-body">
                 <div class="form-group">
-                    <label>Lokasi</label>
-                    <input type="text" class="form-control" id="location_from_name" name="location_from_name"
-                           value="<?= $location_from_name ?>">
+                    <label>Contact</label>
+                    <input type="text" class="form-control" id="location_from_contact" name="location_from_contact"
+                           value="<?= $location_from_contact ?>">
                 </div>
                 <div class="form-group">
                     <label>Detail Lokasi</label>
@@ -68,17 +74,30 @@
                               name="location_from_address"><?= $location_from_address ?></textarea>
                 </div>
                 <div class="form-group">
+                    <label>Keterangan (gedung, lantai, dst.)</label>
+                    <input type="text" class="form-control" id="location_from_name" name="location_from_name"
+                           value="<?= $location_from_name ?>">
+                </div>
+                <div class="form-group">
                     <label>History</label>
-                    <select name="history_first_place" id="history_first_place" class="form-control">
+                    <select name="history_first_place" id="history_first_place" class="form-control location_history">
                         <option selected></option>
-                        <option value="jakarta">Jakarta</option>
-                        <option value="bandung">Bandung</option>
-                        <option value="surabaya">Surabaya</option>
+                        <?php
+                        $length = count($location_from_history);
+                        for ($i = 0; $i < $length; $i++) {
+                          $str = $location_from_history[$i]['location_contact'].'###'.
+                                 $location_from_history[$i]['location_address'].'###'.
+                                 $location_from_history[$i]['location_detail'].'###'.
+                                 $location_from_history[$i]['location_lat'].'###'.
+                                 $location_from_history[$i]['location_lng'];
+                          echo '<option value="'.$str.'">'.$location_from_history[$i]['location_name'].' ['.$location_from_history[$i]['location_address'].']</option>';
+                        }
+                        ?>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label>LatLng</label>
-                    <input type="text" name="location_from_latlng" id="location_from_latlng" class="form-control" value="<?=$location_from_latlng;?>" readonly>
+                    <label>Map Lokasi</label>
+                    <input type="hidden" name="location_from_latlng" id="location_from_latlng" class="form-control" value="<?=$location_from_latlng;?>" readonly>
                 </div>
                 <div class="form-group" id="map_asal" style="width: 100%; height: 200px"></div> 
                 <span class="form-group" id="latlng_asal"></span> 
@@ -93,26 +112,39 @@
             </div>
             <div class="panel-body">
                 <div class="form-group">
-                    <label>Lokasi</label>
-                    <input type="text" class="form-control" id="location_to_name" name="location_to_name"
-                           value="<?= $location_to_name ?>">
+                    <label>Contact</label>
+                    <input type="text" class="form-control" id="location_to_contact" name="location_to_contact"
+                           value="<?= $location_to_contact ?>">
                 </div>
                 <div class="form-group">
                     <label>Detail Lokasi</label>
                     <textarea class="form-control" cols="3" rows="3" id="location_to_address" name="location_to_address" ><?= $location_to_address ?></textarea>
                 </div>
                 <div class="form-group">
+                    <label>Keterangan (gedung, lantai, dst.)</label>
+                    <input type="text" class="form-control" id="location_to_name" name="location_to_name"
+                           value="<?= $location_to_name ?>">
+                </div>
+                <div class="form-group">
                     <label>History</label>
-                    <select name="history_last_place" id="history_last_place" class="form-control">
+                    <select name="history_last_place" id="history_last_place" class="form-control location_history">
                         <option selected></option>
-                        <option value="jakarta">Jakarta</option>
-                        <option value="bandung">Bandung</option>
-                        <option value="surabaya">Surabaya</option>
+                        <?php
+                        $length = count($location_to_history);
+                        for ($i = 0; $i < $length; $i++) {
+                          $str = $location_to_history[$i]['location_contact'].'###'.
+                                 $location_to_history[$i]['location_address'].'###'.
+                                 $location_to_history[$i]['location_detail'].'###'.
+                                 $location_to_history[$i]['location_lat'].'###'.
+                                 $location_to_history[$i]['location_lng'];
+                          echo '<option value="'.$str.'">'.$location_to_history[$i]['location_name'].' ['.$location_to_history[$i]['location_address'].']</option>';
+                        }
+                        ?>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label>LatLng</label>
-                    <input type="text" name="location_to_latlng" id="location_to_latlng" class="form-control" value="<?=$location_from_latlng;?>" readonly>
+                    <label>Map Lokasi</label>
+                    <input type="hidden" name="location_to_latlng" id="location_to_latlng" class="form-control" value="<?=$location_from_latlng;?>" readonly>
                 </div>
                 <div class="form-group" id="map_tujuan" style="width: 100%; height: 200px"></div> 
                 <span class="form-group" id="latlng_tujuan"></span> 
@@ -170,8 +202,8 @@
                             <div class="col-md-3">
                                 <label for="item_dimension_unit">Satuan</label>
                                 <select class="form-control" name="item_dimension_unit" id="item_dimension_unit">
-                                    <option value="1">M</option>
-                                    <option value="2">Cm</option>
+                                    <option value="M">M</option>
+                                    <option value="Cm">Cm</option>
                                 </select>
                                 <span id="span_item_dimension_unit"></span>
                             </div>
@@ -187,8 +219,8 @@
                                     <div class="col-md-6">
                                         <label for="item_kubikasi_unit">Satuan</label>
                                         <select class="form-control" name="item_kubikasi_unit" id="item_kubikasi_unit">
-                                            <option value="1">M3</option>
-                                            <option value="2">Cm3</option>
+                                            <option value="M3">M3</option>
+                                            <option value="Cm3">Cm3</option>
                                         </select>
                                         <span id="span_item_kubikasi_unit"></span>
                                     </div>
@@ -204,8 +236,8 @@
                                     <div class="col-md-6">
                                         <label for="item_weight_unit">Satuan</label>
                                         <select class="form-control" name="item_weight_unit" id="item_weight_unit">
-                                            <option value="1">Kg</option>
-                                            <option value="2">Ton</option>
+                                            <option value="Kg">Kg</option>
+                                            <option value="Ton">Ton</option>
                                         </select>
                                         <span id="span_item_weight_unit"></span>
                                     </div>
@@ -257,11 +289,11 @@
                             });
 
                             $('#item_dimension_unit').change(function() {
-                                $('#item_kubikasi_unit').val($('#item_dimension_unit').val());
+                                $('#item_kubikasi_unit').val($('#item_dimension_unit').val()+"3");
                             });
 
                             $('#item_kubikasi_unit').change(function() {
-                                $('#item_dimension_unit').val($('#item_kubikasi_unit').val());
+                                $('#item_dimension_unit').val($('#item_kubikasi_unit').val().replace("3",""));
                             });
                         });
 
@@ -281,7 +313,8 @@
                                 item_kubikasi = item_length*item_width*item_height;
                             }
 
-                            var item_kubikasi_unit = $('#item_kubikasi_unit').val();
+                            var item_kubikasi_unit = $('#item_dimension_unit').val()+"3";
+                            if ($('#item_kubikasi_unit').val()) {item_kubikasi_unit = $('#item_kubikasi_unit').val();}
                             var item_weight = $('#item_weight').val();
                             var item_weight_unit = $('#item_weight_unit').val();
                             var satuan_berat = $('#item_weight_unit option:selected').text();
@@ -416,14 +449,13 @@
                         ?>
                         <tr>
                             <?php
-                            $uom = "";
-                            if ($sd['item_dimension_unit']==1) {$uom="M";} else {$uom="CM";}
+                            $uom = $sd['item_dimension_unit'];
                             ?>
                             <td><?= $sd['item_name'] ?></td>
                             <td><?= $sd['item_qty'] ?></td>
                             <td><?= $sd['item_length']." ".$uom." x ".$sd['item_width']." ".$uom." x ".$sd['item_height']." ".$uom ?></td>
-                            <td><?= $sd['item_kubikasi']." ".$uom."3" ?></td>
-                            <td><?= $sd['item_weight'] ?></td>
+                            <td><?= $sd['item_kubikasi']." ".$sd['item_kubikasi_unit'] ?></td>
+                            <td><?= $sd['item_weight']." ".$sd['item_weight_unit'] ?></td>
                             <td>
                                 <button type="button" id="btnEdit<?=$sd['shipment_details_id']?>" class="btn btn-primary" onclick="editItems(<?=$sd['shipment_details_id']?>, this.id)">Edit</button>
                                 <button type="button" id="btnDelete<?=$sd['shipment_details_id']?>" class="btn btn-danger" onclick="deleteItems(<?=$sd['shipment_details_id']?>, this.id)">Delete</button>
@@ -440,25 +472,26 @@
 </div>
 
 <div class="row">
-    <div class="col-xs-2">
+    <div class="col-xs-3">
         <div class="form-group">
             <label>Tanggal Kirim</label>
+            <input type="text" class="form-control" id="shipment_delivery_date_from" name="shipment_delivery_date_from"
+                   onmouseover="getTanggal(this.id)" width="50px"
+                   placeholder="Tanggal awal" value="<?= $shipment_delivery_date_from ?>">
+            <label>&nbsp;</label>
             <input type="text" class="form-control" id="shipment_delivery_date_to" name="shipment_delivery_date_to"
                    onmouseover="getTanggal(this.id)" width="50px"
-                   placeholder="Tanggal awal" value="<?= $shipment_delivery_date_to ?>">
+                   placeholder="Tanggal akhir" value="<?= $shipment_delivery_date_to ?>">
         </div>
     </div>
-    <div class="col-xs-2">
+    <div class="col-xs-3">
         <div class="form-group">
-            <label>&nbsp;</label>
+            <label>Tanggal Max. Kiriman</label>
             <input type="text" class="form-control" id="shipment_end_date" name="shipment_end_date"
                    onmouseover="getTanggal(this.id)" width="50px"
-                   placeholder="Tanggal akhir" value="<?= $shipment_end_date ?>">
+                   placeholder="Tanggal max. kiriman" value="<?= $shipment_end_date ?>">
         </div>
     </div>
-</div>
-
-<div class="row">
     <div class="col-md-6">
         <div class="form-group">
             <label>Harga</label>
@@ -487,12 +520,17 @@
         </div>
     </div>
 </div>
-
+<div class='row'>
+    <div class='col-md-12 text-right'>
 <button type="button" onclick="doKirim()" id="btnSave" class="btn btn-success"><span
         class="fa fa-save"></span> <?= $btnSave ?></button>
-<button type="reset" class="btn btn-danger"><span class="fa fa-remove"></span> Batal</button>
+<button type="reset" class="btn btn-danger"><span class="fa fa-remove"></span> Reset</button>
+<button type="button" onclick="location.href='<?=site_url('kirim/');?>';" class="btn btn-warning"><span class="fa fa-minus-circle"></span> Batal</button>
+    </div>
+</div>
 </form>
 
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyBxOH8f5gil4RYVBIwPCZQ197euUsnnyUo&callback=initMap&libraries=places" async defer></script>
 <script>
    var type = $("#type").val();
    var url;
@@ -602,11 +640,18 @@
 
     var map_asal,map_tujuan;
     var marker_asal,marker_tujuan;
-    var center_from = {lat: -7.2653524, lng: 112.7454884};
-    var center_to = {lat: -7.2653524, lng: 112.7454884};
+    var center_from = {lat: 0, lng: 0};
+    var center_to = {lat: 0, lng: 0};//{lat: -7.2653524, lng: 112.7454884};
 
     function updatePosition(div, lat, lng) {
         $("#"+div).val(lat.toFixed(4)+', '+lng.toFixed(4));
+    }
+
+    function initialize() {
+        input = document.getElementById('location_from_address');
+        new google.maps.places.Autocomplete(input);
+        input = document.getElementById('location_to_address');
+        new google.maps.places.Autocomplete(input);
     }
 
     function initMap() {
@@ -640,6 +685,19 @@
         google.maps.event.addListener(marker_asal, 'dragend', function () {
             map_asal.setCenter(this.getPosition()); // Set map center to marker position
             updatePosition("location_from_latlng",this.getPosition().lat(), this.getPosition().lng()); // update position display
+            latlng = {lat: parseFloat(this.getPosition().lat()),lng: parseFloat(this.getPosition().lng())};
+            var geocoder = new google.maps.Geocoder;
+            geocoder.geocode({'location': latlng}, function(results, status) {
+              if (status === 'OK') {
+                if (results[1]) {
+                  $("#location_from_address").val(results[0].formatted_address);
+                } else {
+                  window.alert('No results found');
+                }
+              } else {
+                window.alert('Geocoder failed due to: ' + status);
+              }
+            });
         });
 
         map_tujuan = new google.maps.Map(document.getElementById('map_tujuan'), {
@@ -658,10 +716,24 @@
         google.maps.event.addListener(marker_tujuan, 'dragend', function () {
             map_tujuan.setCenter(this.getPosition()); // Set map center to marker position
             updatePosition("location_to_latlng",this.getPosition().lat(), this.getPosition().lng()); // update position display
+            latlng = {lat: parseFloat(this.getPosition().lat()),lng: parseFloat(this.getPosition().lng())};
+            var geocoder = new google.maps.Geocoder;
+            geocoder.geocode({'location': latlng}, function(results, status) {
+              if (status === 'OK') {
+                if (results[1]) {
+                  $("#location_to_address").val(results[0].formatted_address);
+                } else {
+                  window.alert('No results found');
+                }
+              } else {
+                window.alert('Geocoder failed due to: ' + status);
+              }
+            });
         });
 
         updatePosition("location_from_latlng",center_from.lat,center_from.lng);
         updatePosition("location_to_latlng",center_to.lat,center_to.lng);
+        google.maps.event.addDomListener(window, 'load', initialize);
     }
 
     function get_lat_long(mode,address) {
@@ -684,16 +756,23 @@
         });
     }
 
-    $("#location_from_address").blur(function() {
+    $("#location_from_address").change(function() {
         get_lat_long('from',$(this).val());
     });
 
-    $("#location_to_address").blur(function() {
+    $("#location_to_address").change(function() {
         get_lat_long('to',$(this).val());
     });
 
+    $("#location_from_address").blur(function() {
+        $("#location_from_address").change();
+    });
+
+    $("#location_to_address").blur(function() {
+        $("#location_to_address").change();
+    });
+
     $("#location_from_latlng").on("change",function() {
-        alert('a');
         latlng = $("#location_from_latlng").val();
         lat = substr(latlng,0,strpos(latlng,",")-1)*1;
         lng = substr(latlng,strpos(latlng," ")+1)*1;
@@ -702,7 +781,6 @@
     });
 
     $("#location_to_latlng").change(function() {
-        alert('b');
         latlng = $("#location_to_latlng").val();
         lat = substr(latlng,0,strpos(latlng,",")-1)*1;
         lng = substr(latlng,strpos(latlng," ")+1)*1;
@@ -710,8 +788,33 @@
         map_tujuan.panTo( new google.maps.LatLng(lat,lng) );
     });
 
+    $(".location_history").change(function() {
+        str = $(this).val();
+        sContact = str.substr(0,str.indexOf('###'));
+        str = str.substr(str.indexOf('###')+3);
+        sAddr = str.substr(0,str.indexOf('###'));
+        str = str.substr(str.indexOf('###')+3);
+        sDetail = str.substr(0,str.indexOf('###'));
+        str = str.substr(str.indexOf('###')+3);
+        sLat = str.substr(0,str.indexOf('###'));
+        sLng = str.substr(str.indexOf('###')+3);
+
+        if ($(this).attr('name')=='history_first_place') {
+            $('#location_from_contact').val(sContact);
+            $('#location_from_address').val(sAddr);
+            $('#location_from_name').val(sDetail);
+            $('#location_from_latlng').val(sLat+','+sLng);
+            $("#location_from_address").change();
+        }
+        else if ($(this).attr('name')=='history_last_place') {
+            $('#location_to_contact').val(sContact);
+            $('#location_to_address').val(sAddr);
+            $('#location_to_name').val(sDetail);
+            $('#location_to_latlng').val(sLat+','+sLng);
+            $("#location_to_address").change();
+        }
+    });
 </script>
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBxOH8f5gil4RYVBIwPCZQ197euUsnnyUo&callback=initMap" async defer></script>
 
 </div>
 <!-- /.container-fluid -->
