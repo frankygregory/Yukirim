@@ -57,7 +57,7 @@ class Login extends CI_Controller
 
     public function doLogin()
     {
-        if ($this->check_captcha()) {
+//        if ($this->check_captcha()) {
             if ($this->form_validation->run('login') == FALSE) {
                 $data = array(
                     'title' => 'Login Yukirim',
@@ -135,15 +135,15 @@ class Login extends CI_Controller
                     }
                 }
             }
-        }
-        else {
-            $data = array(
-                'title' => 'Login Yukirim',
-                'error' => 'Wrong Captcha!!',
-                'img' => $this->create_captcha(),
-            );
-            $this->load->view('front/Login', $data);
-        }
+//        }
+//        else {
+//            $data = array(
+//                'title' => 'Login Yukirim',
+//                'error' => 'Wrong Captcha!!',
+//                'img' => $this->create_captcha(),
+//            );
+//            $this->load->view('front/Login', $data);
+//        }
     }
 
     public function logout()
