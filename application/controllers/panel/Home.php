@@ -14,6 +14,11 @@ class Home extends MY_Controller
         $data = array(
             'title' => 'Dashboard'
         );
+		
+		$query = $this->db->query("select user_id, party_id from m_user_party where user_id = 1 or party_id = 1");
+
+		$row = $query->row();
+
         parent::template('home', $data);
     }
 }

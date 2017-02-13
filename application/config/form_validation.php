@@ -147,6 +147,34 @@ $config = array(
             'rules' => 'required'
         ),
     ),
+	
+	'confirm' => array(
+        array(
+            'field' => 'username',
+            'label' => 'Username',
+            'rules' => 'trim|required|min_length[8]|max_length[15]|is_unique[m_user.username]',
+        ),
+        array(
+            'field' => 'name',
+            'label' => 'Name',
+            'rules' => 'trim|required|min_length[8]',
+        ),
+        array(
+            'field' => 'password',
+            'label' => 'Password',
+            'rules' => 'trim|required|min_length[8]',
+        ),
+        array(
+            'field' => 'passconf',
+            'label' => 'Password Confirmation',
+            'rules' => 'trim|required|matches[password]',
+        ),
+        array(
+            'field' => 'term-conditions',
+            'label' => 'Term & Conditions',
+            'rules' => 'required',
+        ),
+    ),
 
 
 );

@@ -42,23 +42,24 @@
     <?php } ?>
 
     <?php
-    if ($this->session->userdata('role_id') == 0 || $this->session->userdata('role_id') == 1) {
+    if ($this->session->userdata('role_id') == 0 || $this->session->userdata('role_id') == 2) {
         ?>
         <li>
             <a href="<?= base_url() ?>lokasi"><i class="fa fa-fw fa-map-marker"></i> Lokasi</a>
         </li>
     <?php } ?>
 
-    <?php
-    if ($this->session->userdata('role_id') == 0) {
-        ?>
+
         <li>
             <a href="<?= base_url() ?>rekanan"><i class="fa fa-fw fa-gift"></i> Rekanan</a>
         </li>
+	    <?php
+    //if ($this->session->userdata('role_id') == 0) {
+        ?>	
         <li>
             <a href="<?= base_url() ?>user"><i class="fa fa-fw fa-user"></i> User</a>
         </li>
-    <?php } ?>
+    <?php // } ?>
 
 
     <li>
