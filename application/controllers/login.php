@@ -51,7 +51,7 @@ class Login extends CI_Controller
                 'error' => '',
                 'img' => $img,
             );
-            $this->load->view('front/Login', $data);
+            $this->load->view('front/login', $data);
         }
     }
 
@@ -64,13 +64,13 @@ class Login extends CI_Controller
                     'error' => '',
                     'img' => $this->create_captcha(),
                 );
-                $this->load->view('front/Login', $data);
+                $this->load->view('front/login', $data);
             } else {
                 $username = $this->input->post('username');
                 $password = $this->input->post('password');
 
                 if (!preg_match('/^[a-zA-Z0-9_\.]+$/', $username) OR !preg_match('/^[a-zA-Z0-9_\.]+$/', $password)) {
-                    $this->view('front/Login', 'Isian harus huruf atau angka');
+                    $this->view('front/login', 'Isian harus huruf atau angka');
                 } else {
                     if ((strlen($username) > 0) OR (strlen($password) > 0)) {
                         if ($user = $this->db->query("select * from m_user where username = '" . $username . "' limit 1")->result_array()) {
@@ -122,7 +122,7 @@ class Login extends CI_Controller
                                     'error' => 'Password salah!!',
                                     'img' => $this->create_captcha(),
                                 );
-                                $this->load->view('front/Login', $data);
+                                $this->load->view('front/login', $data);
                             }
                         } else {
                             $data = array(
@@ -130,7 +130,7 @@ class Login extends CI_Controller
                                 'error' => 'Username salah!!',
                                 'img' => $this->create_captcha(),
                             );
-                            $this->load->view('front/Login', $data);
+                            $this->load->view('front/login', $data);
                         }
                     }
                 }
@@ -142,7 +142,7 @@ class Login extends CI_Controller
 //                'error' => 'Wrong Captcha!!',
 //                'img' => $this->create_captcha(),
 //            );
-//            $this->load->view('front/Login', $data);
+//            $this->load->view('front/login', $data);
 //        }
     }
 
